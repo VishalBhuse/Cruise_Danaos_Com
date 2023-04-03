@@ -16,12 +16,9 @@ import { IoMdDownload } from "react-icons/io";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { MdPictureAsPdf } from "react-icons/md";
 
-import AdminNavbar from "./AdminNavbar";
 const AdminInvoice = () => {
   return (
     <>
-      <AdminNavbar />
-
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"

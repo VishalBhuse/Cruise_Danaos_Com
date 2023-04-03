@@ -16,12 +16,9 @@ import { IoMdDownload } from "react-icons/io";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { MdPictureAsPdf } from "react-icons/md";
 
-import UserNavbar from "./UserNavbar";
 const UserInvoice = () => {
   return (
     <>
-      <UserNavbar />
-
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"

@@ -13,13 +13,10 @@ import { Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { FaEdit } from "react-icons/fa";
-import UserNavbar from "./UserNavbar";
 
 const UserBooking = () => {
   return (
     <>
-      <UserNavbar />
-
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"

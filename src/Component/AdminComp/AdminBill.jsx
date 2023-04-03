@@ -14,12 +14,10 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { IoMdDownload } from "react-icons/io";
-import AdminNavbar from "./AdminNavbar";
 
 const AdminBill = () => {
   return (
     <>
-      <AdminNavbar />
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"

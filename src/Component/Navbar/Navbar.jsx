@@ -15,67 +15,75 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Header from "./Header";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
-      <Flex
-        w="90%"
-        mx="auto"
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        align={"center"}
-      >
+    <>
+      <Header />
+      <Box>
         <Flex
-          flex={{ base: 2, md: "auto" }}
-          display={{ base: "flex", md: "none" }}
+          w="90%"
+          mx="auto"
+          bg={useColorModeValue("white", "gray.800")}
+          color={useColorModeValue("gray.600", "white")}
+          align={"center"}
         >
-          <IconButton
-            fontSize={"23px"}
-            onClick={onToggle}
-            icon={
-              isOpen ? <MdClose w={3} h={3} /> : <GiHamburgerMenu w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={"flex-end"}>
-          <Link to={"/"}>
-            <Image
-              display={["block", "block", "none"]}
-              src="./img/vishal/footerlogo.png"
-              boxSize={"60px"}
-            ></Image>
-          </Link>
-
           <Flex
-            display={{ base: "none", md: "flex" }}
-            alignItems={"center"}
-            justifyContent="center"
-            bg="#081839"
-            color="#F2CD5C"
-            fontWeight="600"
-            fontSize={"22px"}
-            py="30px"
-            px="30px"
-            w="fit-content"
-            borderRadius={"20px"}
-            mx="auto"
-            h="25px"
-            mt="-1.5rem"
+            flex={{ base: 2, md: "auto" }}
+            display={{ base: "flex", md: "none" }}
           >
-            <DesktopNav />
+            <IconButton
+              fontSize={"23px"}
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <MdClose w={3} h={3} />
+                ) : (
+                  <GiHamburgerMenu w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Toggle Navigation"}
+            />
+          </Flex>
+          <Flex flex={{ base: 1 }} justify={"flex-end"}>
+            <Link to={"/"}>
+              <Image
+                display={["block", "block", "none"]}
+                src="./img/vishal/footerlogo.png"
+                boxSize={"60px"}
+              ></Image>
+            </Link>
+
+            <Flex
+              display={{ base: "none", md: "flex" }}
+              alignItems={"center"}
+              justifyContent="center"
+              bg="#081839"
+              color="#F2CD5C"
+              fontWeight="600"
+              fontSize={"22px"}
+              py="30px"
+              px="30px"
+              w="fit-content"
+              borderRadius={"20px"}
+              mx="auto"
+              h="25px"
+              mt="-1.5rem"
+            >
+              <DesktopNav />
+            </Flex>
           </Flex>
         </Flex>
-      </Flex>
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-      <br />
-    </Box>
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+        <br />
+      </Box>
+    </>
   );
 }
 

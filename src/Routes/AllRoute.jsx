@@ -19,34 +19,129 @@ import AdminPackage from "../Component/AdminComp/AdminPackage";
 import AdminInvoice from "../Component/AdminComp/AdminInvoice";
 import AdminBill from "../Component/AdminComp/AdminBill";
 import AdminDetails from "../Component/AdminComp/AdminDetails";
+import { useLocation } from "react-router-dom";
+import AdminNavbar from "../Component/AdminComp/AdminNavbar";
+import UserNavbar from "../Component/UserComp/UserNavbar";
+import RequireAuth from "../HOC/RequiredAuth";
+import Unauth from "../Component/Unauth/Unauth";
+
+const routes = [
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/package",
+    element: <Package />,
+  },
+  {
+    path: "/sailing",
+    element: <Sailing />,
+  },
+  {
+    path: "/gallery",
+    element: <Gallery />,
+  },
+  {
+    path: "/offer",
+    element: <Offer />,
+  },
+  {
+    path: "/loginpage",
+    element: <Login />,
+  },
+  {
+    path: "/signpage",
+    element: <SignUp />,
+  },
+  {
+    path: "/userprofile",
+    element: (
+      <RequireAuth>
+        <UserDashboard />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/userbooking",
+    element: (
+      <RequireAuth>
+        <UserBooking />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/userinvoice",
+    element: (
+      <RequireAuth>
+        <UserInvoice />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/admindetails",
+    element: (
+      <RequireAuth adminOnly>
+        <AdminDetails />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/adminpackage",
+    element: (
+      <RequireAuth adminOnly>
+        <AdminPackage />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/adminbill",
+    element: (
+      <RequireAuth adminOnly>
+        <AdminBill />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/admininvoice",
+    element: (
+      <RequireAuth adminOnly>
+        <AdminInvoice />
+      </RequireAuth>
+    ),
+  },
+  {
+    path: "/unauthor",
+    element: <Unauth />,
+  },
+  {
+    path: "*",
+    element: <Pnf />,
+  },
+];
 
 const AllRoute = () => {
-  return (
-    <div>
-      <Header />
-      <Navbar /> 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/package" element={<Package />} />
-        <Route path="/sailing" element={<Sailing />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/offer" element={<Offer />} />
-        <Route path="/loginpage" element={<Login />} />
-        <Route path="/signpage" element={<SignUp />} />
-        <Route path="/userprofile" element={<UserDashboard />} />
-        <Route path="/userbooking" element={<UserBooking />} />
-        <Route path="/userinvoice" element={<UserInvoice />} />
-        <Route path="/admindetails" element={<AdminDetails />} />
-        <Route path="/adminpackage" element={<AdminPackage />} />
-        <Route path="/adminbill" element={<AdminBill />} />
-        <Route path="/admininvoice" element={<AdminInvoice />} />
+  const location = useLocation();
 
-        <Route path="/*" element={<Pnf />} />
+  return (
+    <>
+      {location.pathname.startsWith("/admin") ? (
+        <AdminNavbar />
+      ) : location.pathname.startsWith("/user") ? (
+        <UserNavbar />
+      ) : (
+        <Navbar />
+      )}
+
+      <Routes>
+        {routes.map(({ path, element }, index) => (
+          <Route key={index} path={path} element={element} />
+        ))}
       </Routes>
 
       <Footer />
       <Scroll />
-    </div>
+    </>
   );
 };
 

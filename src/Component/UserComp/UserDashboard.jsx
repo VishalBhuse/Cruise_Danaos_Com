@@ -9,7 +9,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import axios from "axios";
-import UserNavbar from "./UserNavbar";
 import EditProfileModal from "./ProfileModal/EditProfileModal";
 
 const UserDashboard = () => {
@@ -31,7 +30,6 @@ const UserDashboard = () => {
 
   return (
     <>
-      <UserNavbar />
 
       <Box w="90%" mx="auto" bg="#081839">
         <Box

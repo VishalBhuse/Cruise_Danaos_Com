@@ -2,7 +2,6 @@ import { Box, HStack, Image, SimpleGrid, VStack } from "@chakra-ui/react";
 import { Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import AdminNavbar from "./AdminNavbar";
 import axios from "axios";
 import { Rating } from "../../Rating/Rating";
 import DeletePackageModal from "./DeleteModal/DeletePackageModal";
@@ -32,7 +31,6 @@ const AdminPackage = () => {
   }, []);
   return (
     <>
-      <AdminNavbar />
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"

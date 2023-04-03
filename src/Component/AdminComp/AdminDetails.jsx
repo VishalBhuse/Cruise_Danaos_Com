@@ -13,12 +13,10 @@ import { Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { AiTwotoneDelete, AiFillPlusSquare } from "react-icons/ai";
-import AdminNavbar from "./AdminNavbar";
 
 const AdminDetails = () => {
   return (
     <>
-      <AdminNavbar />
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"
