@@ -5,7 +5,7 @@ const pageData = [
   {
     id: 1,
     text: "Birthday Packages",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     desc: "Celebrate your special birthday with a set of deals and a unique experience with beautiful views that can only be found on board the Royal Albatross.",
     img: "./img/vishal/pack1.png",
     alt: "prod1",
@@ -15,7 +15,7 @@ const pageData = [
     text: "Group Birthday Party",
     img: "./img/vishal/pack2.png",
     desc: "Secrets are best unveiled at unforgettable locations and what better way than to deliver an unforgettable surprise with our celebration packages?",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     alt: "prod2",
   },
   {
@@ -23,7 +23,7 @@ const pageData = [
     text: "Anniversary Packages",
     img: "./img/vishal/pack3.png",
     desc: "Our wedding anniversary packages have been carefully curated to eternalize this important day and celebrate another beautiful milestone in your lives.",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     alt: "prod3",
   },
   {
@@ -31,7 +31,7 @@ const pageData = [
     text: "I am Sorry Packages",
     img: "./img/vishal/pack4.png",
     desc: "why not say “I’m Sorry” with our unique dinner cruise apology package onboard our 4-masted 22 sail superyacht that will surely calm even the most choppy waters",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     alt: "prod4",
   },
   {
@@ -39,7 +39,7 @@ const pageData = [
     text: "Proposal Packages",
     img: "./img/vishal/pack5.png",
     desc: "If you are looking for something truly special, unique, and meaningful, simply give us a call and take a moment with us while we sweep your special someone off their feet. A moment you will definitely remember and be proud of for many years to come.",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     alt: "prod5",
   },
   {
@@ -47,7 +47,7 @@ const pageData = [
     text: "Team Bonding Packages",
     img: "./img/vishal/pack6.png",
     desc: "Looking for a unique and spacious spot to host your corporate events? We have the perfect venue just for you.",
-    start: "Starts From $499",
+    start: "Starts From Rs.499",
     alt: "prod6",
   },
 ];
@@ -104,10 +104,10 @@ const Package = () => {
             key={item.id}
           >
             <Box>
-              <Image src={item.img} alt={item.alt} boxSize={"100%"}></Image>
+              <Image src={item.img} alt={item.alt} boxSize={"500px"}></Image>
             </Box>
             <Box textAlign={"center"}>
-              <VStack spacing={["20px", "50px"]} mt="4">
+              <VStack spacing={["20px", "20px"]} mt="4">
                 <Text fontWeight="700" fontSize={"42px"}>
                   {item.text}
                 </Text>
@@ -133,7 +133,7 @@ const Package = () => {
                   _hover={{ backgroundColor: "#081839" }}
                   px="50px"
                 >
-                  view package
+                  Book package
                 </Button>
               </VStack>
             </Box>

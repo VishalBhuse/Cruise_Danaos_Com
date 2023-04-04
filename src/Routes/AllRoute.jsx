@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "../Component/Footer/Footer";
-import Header from "../Component/Navbar/Header";
 import Navbar from "../Component/Navbar/Navbar";
 import Scroll from "../Component/Scroll/Scroll";
 import Home from "../Pages/Home/Home";
@@ -24,6 +23,7 @@ import AdminNavbar from "../Component/AdminComp/AdminNavbar";
 import UserNavbar from "../Component/UserComp/UserNavbar";
 import RequireAuth from "../HOC/RequiredAuth";
 import Unauth from "../Component/Unauth/Unauth";
+import SinglePackage from "../Component/SinglePackage.jsx/SinglePackage";
 
 const routes = [
   {
@@ -115,11 +115,14 @@ const routes = [
     element: <Unauth />,
   },
   {
+    path: "/singlepackage/:package_id",
+    element: <SinglePackage />,
+  },
+  {
     path: "*",
     element: <Pnf />,
   },
 ];
-
 const AllRoute = () => {
   const location = useLocation();
 

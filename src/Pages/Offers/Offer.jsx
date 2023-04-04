@@ -55,10 +55,11 @@ const Offer = () => {
                   color={"#00000"}
                   fontWeight={"400"}
                   mt={{ base: "5px", md: "10px" }}
+                  textAlign="center"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Commodo odio aenean sed adipiscing.
+                  Find the best offers and deals below and join us on India's
+                  Danaos ship where you’re guaranteed open well-ventilated decks
+                  and fresh sea breezes!
                 </Text>
               </Box>
               <Box>
@@ -221,53 +222,6 @@ const Offer = () => {
                   Free Single-way Limo Ride home worth $80 with every purchase
                   of 2x Adult City Lights Dinner Cruise!
                 </Text>
-                <Text
-                  fontWeight="700"
-                  fontSize={["12px", "17px", "20px", "20px"]}
-                  my={{ base: "5px", md: "5px" }}
-                >
-                  Terms & Conditions:
-                </Text>
-                <OrderedList
-                  fontSize={["10px", "15px", "15px", "15px"]}
-                  fontWeight="500"
-                >
-                  <ListItem>
-                    Promo code redemption is only with the purchase of a pair of
-                    regular-priced City Lights dinner cruise tickets ($225++) on
-                    tallship.com.sg with promotion code “TAKEMEHOME” only.
-                  </ListItem>
-                  <ListItem>
-                    Promo code has no monetary value and is valid for same-day,
-                    one-way, single location drop-off, single-use only and
-                    cannot be transferred, exchanged for cash, or offset for any
-                    other products or services.
-                  </ListItem>
-                  <ListItem>
-                    Once Limousine booking has been confirmed this coupon will
-                    be considered claimed.
-                  </ListItem>
-                  <ListItem>
-                    Additional charges due to re-booking of limousine due to
-                    no-show, additional locations & added expenses from the ride
-                    will need to be at the customer’s expense and based on
-                    limousine service’s standard rates.
-                  </ListItem>
-                  <ListItem>
-                    Under no circumstances will Tall Ship Adventures Pte Ltd be
-                    held responsible or liable in any way for any claims,
-                    damages, losses, expenses, costs, or liabilities whatsoever.
-                    Tall Ship
-                  </ListItem>
-                  <ListItem>
-                    Adventures Pte Ltd reserves the right to change these terms
-                    and conditions at any time without prior notice.
-                  </ListItem>
-                  <ListItem>
-                    This promo code cannot be used in conjunction with any other
-                    ongoing promotions.
-                  </ListItem>
-                </OrderedList>
               </Box>
             </GridItem>
           </Grid>

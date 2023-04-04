@@ -47,10 +47,6 @@ const Footer = () => {
               Please visit and connect with us and give us chance to explore the
               world with you.
             </Text>
-
-            <Text color="#000" textAlign="left">
-              Read more....
-            </Text>
           </Stack>
           <Stack
             align={"flex-start"}
@@ -74,22 +70,6 @@ const Footer = () => {
                   <ListItem mt="2">Booking</ListItem>
                   <ListItem mt="2">HoListItemdays</ListItem>
                   <ListItem mt="2">Fooding</ListItem>
-                </UnorderedList>
-              </Box>
-            </VStack>
-            <VStack align={"flex-start"}>
-              <Text
-                mt="50px"
-                fontWeight="700"
-                fontSize="22px"
-                lineHeight="25px"
-                letterSpacing="0.02em"
-              >
-                Quick Links
-              </Text>
-              <Box borderBottom="3px solid #081839" w="76px" h="2px"></Box>
-              <Box mt="150px">
-                <UnorderedList textAlign={"left"} ml="6" fontSize={"14px"}>
                   <ListItem mt="2">Home</ListItem>
                   <ListItem mt="2">Explore the Cruise</ListItem>
                   <ListItem mt="2">News</ListItem>
@@ -194,13 +174,19 @@ const Footer = () => {
             </Text>
             <Box>
               <HStack gap="20px" mt="5px">
-                <Image src="./img/logos/Byoutube.png" w="19px" />
-                <Image src="./img/logos/BFB.png" w="19px" />
-                <Image src="./img/logos/Bmail.png" w="19px" />
+                <a
+                  href="https://www.facebook.com/danaoscruise"
+                  target={"_blank"}
+                >
+                  <Image src="./img/logos/BFB.png" w="19px" />
+                </a>
                 <Image src="./img/logos/Btwit.png" w="19px" />
-
-                <Image src="./img/logos/Bprint.png" w="19px" />
-                <Image src="./img/logos/Binsta.png" w="19px" />
+                <a
+                  href="https://www.instagram.com/danaoscruise"
+                  target="_blank"
+                >
+                  <Image src="./img/logos/Binsta.png" w="19px" />
+                </a>
               </HStack>
             </Box>
           </Stack>

@@ -58,14 +58,14 @@ const Header = () => {
                   src="./img/vishal/footerlogo.png"
                   alt="log"
                 ></Image>
-                <Text
+                {/* <Text
                   color="#081839"
                   fontWeight="700"
                   fontSize={{ sm: "14px", md: "20px", lg: "34px" }}
                   lineHeight="41px"
                 >
                   DANAOS
-                </Text>
+                </Text> */}
               </HStack>
             </Link>
           </GridItem>
@@ -102,7 +102,8 @@ const Header = () => {
             justifyContent={"center"}
             textAlign="center"
             alignItems="center"
-          >
+            >
+           <Text  display={["none", "none", "block"]}>
             <Box
               gap={"10px"}
               display="flex"
@@ -217,6 +218,8 @@ const Header = () => {
                 </Button>
               )}
             </Box>
+
+           </Text>
           </GridItem>
         </Grid>
       </Box>
