@@ -7,10 +7,13 @@ const Birthday = () => {
       <Box w="90%" mx={"auto"} my="20px" pb="25px">
         {birthData?.map((item) => (
           <SimpleGrid columns={[1, 1, 2, 2]} spacing={5} mt="12" key={item.id}>
-            <Box height={["240px","240px", "400px", "400px"]}>
+            <Box height={["240px", "240px", "400px", "400px"]}>
               <Image src={item.img} alt={item.alt} w="100%" h="100%"></Image>
             </Box>
-            <Box textAlign={"center"} height={["240px","240px", "400px", "400px"]}>
+            <Box
+              textAlign={"center"}
+              height={["240px", "240px", "400px", "400px"]}
+            >
               <VStack
                 h="100%"
                 p="3"
@@ -39,7 +42,7 @@ const Birthday = () => {
                     fontSize={["13px", "17px", "20px", "24px"]}
                     textAlign="justify"
                     w="100%"
-                    noOfLines={'2'}
+                    noOfLines={"2"}
                   >
                     {item.desc}
                   </Text>
@@ -61,55 +64,79 @@ const Birthday = () => {
         ))}
       </Box>
       <Box w="90%" mx="auto" mt="2rem" mb="10px">
-        <SimpleGrid columns={[1, 1, 2, 3]} spacing={7}>
-          {sailing?.map((e, ind) => (
-            <SimpleGrid
-              columns={[1, 2, 2, 2]}
-              spacing={2}
-              key={ind}
-              p="2"
-              boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px"
-            >
-              <Box>
-                <Image src={e.imgurl} alt="d" w="100%" h="100%" />
-              </Box>
+        <SimpleGrid mt="2" columns={[1, 1, 2, 3]} spacing="40px" pb="5">
+          {sailing.map((e, ind) => (
+            <Text key={ind} as="span">
               <Box
-                h="100%"
-                display={"flex"}
-                justifyContent="space-between"
-                flexDirection={"column"}
+                height="auto"
+                p="2"
+                boxShadow=" rgba(0, 0, 0, 0.35) 0px 5px 15px"
               >
-                <Text
-                  fontWeight="700"
-                  fontSize={["1.5rem", "2rem", "18px", "20px"]}
-                  color="#000000"
-                >
-                  {e.title}
-                </Text>
-                <Text
-                  fontWeight="500"
-                  fontSize={["1.2rem", "1rem", "18px", "20px"]}
-                  color="#000000"
-                  textAlign={"justify"}
-                >
-                  {e.desc}
-                  <br />
-                  Starts From Rs.{e.prise}
-                </Text>
-                <Button
-                  w={{ base: "100%", md: "113px" }}
-                  h="40px"
-                  backgroundColor={"#081839"}
-                  color="white"
-                  _hover={{ backgroundColor: "#081839" }}
-                  fontWeight={"700"}
-                  fontSize={["1.2rem", "1rem", "18px", "20px"]}
-                  mt="20px"
-                >
-                  Book Now
-                </Button>
+                <SimpleGrid columns={[2, 2, 2, 2]} spacing="2">
+                  <Box h="240px">
+                    <Image
+                      borderRadius={"10px"}
+                      src={e.imgurl}
+                      alt="d"
+                      w="100%"
+                      h="100%"
+                    />
+                  </Box>
+
+                  <Box height={["240px", "240px", "240px"]} px="2">
+                    <VStack
+                      textAlign={"justify"}
+                      h="100%"
+                      alignItems={"flex-start"}
+                      justifyContent={[
+                        "center",
+                        "space-between",
+                        "space-between",
+                      ]}
+                      textTransform="capitalize"
+                    >
+                      <Text
+                        letterSpacing={"2px"}
+                        fontWeight="700"
+                        fontSize={{ base: "18px", md: "18px", lg: "19px" }}
+                        color="#000000"
+                      >
+                        {e.title}
+                      </Text>
+                      <Text
+                        fontWeight="500"
+                        fontSize={{ base: "14px", md: "12px", lg: "15px" }}
+                        color="#000000"
+                        textAlign={"justify"}
+                        noOfLines="3"
+                      >
+                        {e.desc}
+                      </Text>
+                      <Text
+                        fontWeight="500"
+                        fontSize={{ base: "12px", md: "12px", lg: "15px" }}
+                        color="#000000"
+                        textAlign={"justify"}
+                      >
+                        Starts From Rs.{e.prise}
+                      </Text>
+                      <Button
+                        w={{ base: "100%", md: "113px" }}
+                        h="40px"
+                        backgroundColor={"#081839"}
+                        color="white"
+                        _hover={{ backgroundColor: "#081839" }}
+                        fontWeight={"700"}
+                        fontSize={{ base: "14px", md: "16px", lg: "18px" }}
+                        mt="20px"
+                      >
+                        Book Now
+                      </Button>
+                    </VStack>
+                  </Box>
+                </SimpleGrid>
               </Box>
-            </SimpleGrid>
+            </Text>
           ))}
         </SimpleGrid>
       </Box>

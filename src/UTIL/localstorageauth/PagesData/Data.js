@@ -137,9 +137,9 @@ export const sailing = [
   {
     id: 1,
     imgurl: "./img/party-birth.png",
-    title: "Group Birthday Package",
+    title: " Birthday Package",
     prise: "399",
-    desc: "Birthday Dinner Cruise - Super Yacht Royal Albatross",
+    desc: "Birthday Dinner Cruise Super Yacht Royal Albatross",
   },
   {
     id: 2,
@@ -249,9 +249,9 @@ export const sailingsixdata = [
   {
     id: 1,
     imgurl: "./img/party-birth.png",
-    title: "Group Birthday Package",
+    title: " Birthday Package",
     prise: "399",
-    desc: "Birthday Dinner Cruise - Super Yacht Royal Albatross",
+    desc: "Birthday Dinner Cruise Super Yacht Royal Albatross",
   },
   {
     id: 2,
