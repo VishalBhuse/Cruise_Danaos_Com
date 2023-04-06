@@ -17,16 +17,16 @@ import {
   HStack,
   Checkbox,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { GetAPICALL } from "../../Config/Functions/getFun";
 
 const SinglePackage = () => {
   const [details, setDetails] = useState([]);
   const params = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const packcart = useSelector((state) => state.cart.package);
   // console.log(packcart);
 
@@ -41,16 +41,19 @@ const SinglePackage = () => {
       });
   };
 
+  const [isChecked, setIsChecked] = useState(false);
   const [product, setProduct] = useState([]);
   const [checkedMap, setCheckedMap] = useState({});
   const handleCheckboxChange = (event, obj) => {
     const checkboxId = event.target.id;
     const isChecked = event.target.checked;
-
+    
     setCheckedMap((prevCheckedMap) => {
       if (isChecked) {
+        setIsChecked(isChecked);
         return { ...prevCheckedMap, [checkboxId]: obj };
       } else {
+        setIsChecked(isChecked);
         const { [checkboxId]: removed, ...rest } = prevCheckedMap;
         return rest;
       }
@@ -67,9 +70,11 @@ const SinglePackage = () => {
   const handleChecout = () => {
     // console.log(details, "details");
     // console.log(product, "prod");
-
+   
     const newData = [{ details: { ...details }, prod: { ...product } }];
     dispatch({ type: "UPDATE_TO_CART", payload: { ...newData } });
+
+    navigate("/checkout");
   };
 
   useEffect(() => {
@@ -233,24 +238,23 @@ const SinglePackage = () => {
             </TableContainer>
           </Stack>
 
-          <Link to="/checkout">
-            <Button
-              rounded={"none"}
-              w={"full"}
-              size={"lg"}
-              py={["5", "6", "7"]}
-              bg={"#081839"}
-              color={useColorModeValue("#F1CC5C", "#F1CC5C")}
-              textTransform={"uppercase"}
-              _hover={{
-                transform: "translateY(2px)",
-                boxShadow: "lg",
-              }}
-              onClick={handleChecout}
-            >
-              Checkout
-            </Button>
-          </Link>
+          <Button
+            rounded={"none"}
+            w={"full"}
+            size={"lg"}
+            py={["5", "6", "7"]}
+            bg={"#081839"}
+            color={useColorModeValue("#F1CC5C", "#F1CC5C")}
+            textTransform={"uppercase"}
+            _hover={{
+              transform: "translateY(2px)",
+              boxShadow: "lg",
+            }}
+            onClick={handleChecout}
+            isDisabled={!isChecked}
+          >
+            Checkout
+          </Button>
         </Stack>
       </SimpleGrid>
     </Box>
