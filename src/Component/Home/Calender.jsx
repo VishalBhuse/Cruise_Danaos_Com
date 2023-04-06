@@ -125,7 +125,7 @@ const Calender = () => {
         <GridItem colSpan={{ base: 1, sm: 2, md: 2, lg: 4 }}>
           <Box
             w="100%"
-            bg="url('./img/ded.png')"
+            bg="url('./img/vishal/ded.png')"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"

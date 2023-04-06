@@ -10,6 +10,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { Rating } from "../../Rating/Rating";
 const HomeServices = () => {
   const [services, setservices] = useState([]);
   const getPackageData = async () => {
@@ -62,14 +63,21 @@ const HomeServices = () => {
       </Box>
 
       <Box my="1rem">
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={5}>
+        <SimpleGrid columns={[1, 2, 3, 4]} spacing={5}>
           {services?.map((item, ind) => (
             <Box key={ind}>
               <Link to={`/singlepackage/${item._id}`}>
-                <VStack alignItems="left" position={"relative"}>
+                {/* <VStack alignItems="left" position={"relative"}> */}
+                <VStack alignItems="left">
                   <Image
-                    boxsize={["100px", "100px", "100px", "200px"]}
-                    src={"./img/serv1.png"}
+                    // boxsize={["100px", "100px", "100px", "200px"]}
+                    height={{
+                      base: "190px",
+                      sm: "200px",
+                      md: "210px",
+                      lg: "190px",
+                    }}
+                    src={"./img/vishal/pack4.png"}
                     alt={item.alt}
                   />
                   {/* <Text
@@ -111,6 +119,7 @@ const HomeServices = () => {
                   height={{ base: "auto", md: "190px", lg: "190px" }}
                   justifyContent={"space-between"}
                   alignItems="center"
+                  textTransform={"capitalize"}
                 >
                   <Text
                     w="100%"
@@ -118,6 +127,7 @@ const HomeServices = () => {
                     fontWeight="600"
                     lineHeight={"28px"}
                     color="#000000"
+                    textTransform={"capitalize"}
                   >
                     {item.packageName}
                   </Text>
@@ -196,8 +206,7 @@ const HomeServices = () => {
                     mt="5"
                   >
                     <HStack>
-                      <img src="./img/starprod.png" alt="star" />
-                      <Text>{item.rating}</Text>
+                      <Rating stars={item.rating} />
                     </HStack>
                     <HStack>
                       <Text color={"#000"}>From</Text>

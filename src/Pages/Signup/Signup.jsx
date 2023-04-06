@@ -16,14 +16,25 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../Redux/action/user.action";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    address: "",
+    dateofbirth: "",
+    mobilenumber: "",
+    email: "",
+    password: "",
+  });
   const toast = useToast();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleUser = (e) => {
     e.preventDefault();
@@ -31,44 +42,39 @@ const SignUp = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleClick = async () => {
-    // console.log(form);
-    const payload = {
-      role: "user",
-      firstName: form.fname,
-      lastName: form.lname,
-      gender: form.gender,
-      address: form.address,
-      dateofbirth: form.date,
-      mobilenumber: form.mobile,
-      email: form.email,
-      password: form.pass,
-    };
-    await axios
-      .post(
-        "https://backenddanaoscruise-production-ed75.up.railway.app/user/register",
-        payload
-      )
-      .then(() => {
-        toast({
-          description: "SignUp successfully",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top-center",
-        });
+  const handleClick = () => {
+    if (
+      form.firstName !== "" &&
+      form.lastName !== "" &&
+      form.gender !== "" &&
+      form.address !== "" &&
+      form.dateofbirth !== "" &&
+      form.mobilenumber !== "" &&
+      form.email !== "" &&
+      form.password !== ""
+    ) {
+      dispatch(registerUser(form));
 
-        navigate("/loginpage");
-      })
-      .catch((err) => {
-        toast({
-          description: "Please enter your all fields.",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-          position: "top-center",
-        });
+      toast({
+        description: "SignUp successfully",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top-center",
       });
+
+      setTimeout(() => {
+        navigate("/loginpage");
+      }, 2000);
+    } else {
+      toast({
+        description: "Please enter your all fields.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-center",
+      });
+    }
   };
 
   return (
@@ -142,8 +148,8 @@ const SignUp = () => {
                       height={"58px"}
                       w="100%"
                       onChange={handleUser}
-                      name="fname"
-                      value={form.fname || ""}
+                      name="firstName"
+                      value={form.firstName || ""}
                       backgroundColor={"#F2CD5C"}
                     />
                   </FormControl>
@@ -157,8 +163,8 @@ const SignUp = () => {
                       w="100%"
                       backgroundColor={"#F2CD5C"}
                       onChange={handleUser}
-                      name="lname"
-                      value={form.lname || ""}
+                      name="lastName"
+                      value={form.lastName || ""}
                     />
                   </FormControl>
                 </Box>
@@ -201,8 +207,8 @@ const SignUp = () => {
                       height={"58px"}
                       backgroundColor={"#F2CD5C"}
                       onChange={handleUser}
-                      name="date"
-                      value={form.date || ""}
+                      name="dateofbirth"
+                      value={form.dateofbirth || ""}
                     />
                   </FormControl>
                 </Box>
@@ -215,8 +221,8 @@ const SignUp = () => {
                       height={"58px"}
                       backgroundColor={"#F2CD5C"}
                       onChange={handleUser}
-                      name="mobile"
-                      value={form.mobile || ""}
+                      name="mobilenumber"
+                      value={form.mobilenumber || ""}
                     />
                   </FormControl>
                 </Box>
@@ -244,9 +250,9 @@ const SignUp = () => {
                         w="100%"
                         backgroundColor={"#F2CD5C"}
                         onChange={handleUser}
-                        name="pass"
+                        name="password"
                         m={"auto"}
-                        value={form.pass || ""}
+                        value={form.password || ""}
                       />
                       <InputRightElement h={"full"}>
                         <Text

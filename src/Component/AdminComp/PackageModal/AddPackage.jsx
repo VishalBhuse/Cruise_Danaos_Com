@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   FormControl,
   FormLabel,
@@ -15,14 +14,23 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useState } from "react";
 import { AiFillPlusSquare } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { packageADDAPI } from "../../../Redux/action/package.action";
+import { toast } from "react-toastify";
 
-const AddPackage = ({ getData }) => {
+const AddPackage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
-  const [add, setAdd] = useState({});
+  const dispatch = useDispatch();
+  const [add, setAdd] = useState({
+    heading1: "",
+    packageName: "",
+    sailingDate: "",
+    rating: "",
+    availability: "",
+  });
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -31,28 +39,24 @@ const AddPackage = ({ getData }) => {
   };
 
   const handleAddPackage = async () => {
-    const payload = {
-      heading1: add.title1,
-      packageName: add.pname,
-      sailingDate: add.sdate,
-      rating: add.rating,
-      availability: add.availability,
-    };
-    await axios
-      .post(
-        "https://backenddanaoscruise-production-ed75.up.railway.app/managepackage",
-        payload
-      )
-      .then(() => {
-        toast({
-          description: "Packaged Added successfully",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top-center",
-        });
-        getData();
+    if (
+      add.heading1 !== "" &&
+      add.packageName !== "" &&
+      add.sailingDate !== "" &&
+      add.rating !== "" &&
+      add.availability !== ""
+    ) {
+      dispatch(packageADDAPI(add));
+
+      setAdd({});
+      onClose();
+    } else {
+      toast.error("Package Not Added.", {
+        position: "top-left",
+        theme: "colored",
+        autoClose: 3000,
       });
+    }
   };
 
   return (
@@ -87,8 +91,8 @@ const AddPackage = ({ getData }) => {
                 <FormLabel>Title</FormLabel>
                 <Input
                   onChange={handleAdd}
-                  name="title1"
-                  value={add.title1 || ""}
+                  name="heading1"
+                  value={add.heading1}
                   type="text"
                   placeholder="e.g. Lorem"
                   height={"50px"}
@@ -98,8 +102,8 @@ const AddPackage = ({ getData }) => {
                 <FormLabel mt={[2, 2, 0, 0]}>PackageName</FormLabel>
                 <Input
                   onChange={handleAdd}
-                  name="pname"
-                  value={add.pname || ""}
+                  name="packageName"
+                  value={add.packageName}
                   type="text"
                   placeholder="e.g. Ispum"
                   height={"50px"}
@@ -111,8 +115,8 @@ const AddPackage = ({ getData }) => {
                 <FormLabel mt={[2, 2, 2, 2]}>SailingDate</FormLabel>
                 <Input
                   onChange={handleAdd}
-                  name="sdate"
-                  value={add.sdate || ""}
+                  name="sailingDate"
+                  value={add.sailingDate}
                   type="date"
                   placeholder="e.g. Lorem Ispum12@gmail.com"
                   height={"50px"}
@@ -123,7 +127,7 @@ const AddPackage = ({ getData }) => {
                 <Input
                   onChange={handleAdd}
                   name="rating"
-                  value={add.rating || ""}
+                  value={add.rating}
                   type="number"
                   placeholder="e.g. number"
                   height={"50px"}

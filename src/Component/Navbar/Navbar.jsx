@@ -6,7 +6,6 @@ import {
   Stack,
   Collapse,
   useColorModeValue,
-  Image,
   useDisclosure,
   VStack,
   HStack,
@@ -17,8 +16,8 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Header from "./Header";
-import { BsFillBagPlusFill } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
+// import { BsFillBagPlusFill } from "react-icons/bs";
+// import { AiOutlineUser } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT } from "../../Redux/actiontypes/auth.types";
 import { FaUserAlt } from "react-icons/fa";

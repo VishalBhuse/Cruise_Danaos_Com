@@ -7,33 +7,20 @@ import {
   AlertDialogOverlay,
   Button,
   useDisclosure,
-  useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { DeltePackageTableApi } from "../../../Redux/action/package.action";
 
-const DeleteTableModal = ({ packageId, tableid, getData }) => {
+const DeleteTableModal = ({ packageId, tableid }) => {
   // console.log(packageId, tableid);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
-  const toast = useToast();
+  const dispatch = useDispatch();
 
   const handledeletetable = () => {
-    axios
-      .delete(
-        `https://backenddanaoscruise-production-ed75.up.railway.app/managepackage/tables/${packageId}/${tableid}`
-      )
-      .then(() => {
-        toast({
-          description: "Packaged deleted successfully",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top-center",
-        });
-        getData();
-      });
+    dispatch(DeltePackageTableApi(packageId, tableid));
   };
 
   return (

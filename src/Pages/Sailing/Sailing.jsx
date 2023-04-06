@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { sailingsixdata } from "../../UTIL/localstorageauth/PagesData/Data";
-
+import { Link } from "react-router-dom";
 const Sailing = () => {
   return (
     <>
@@ -176,18 +176,20 @@ const Sailing = () => {
                       >
                         Starts From Rs.{e.prise}
                       </Text>
-                      <Button
-                        w={{ base: "100%", md: "113px" }}
-                        h="40px"
-                        backgroundColor={"#081839"}
-                        color="white"
-                        _hover={{ backgroundColor: "#081839" }}
-                        fontWeight={"700"}
-                        fontSize={{ base: "14px", md: "16px", lg: "18px" }}
-                        mt="20px"
-                      >
-                        Book Now
-                      </Button>
+                      <Link to="/allpackages">
+                        <Button
+                          w={{ base: "100%", md: "113px" }}
+                          h="40px"
+                          backgroundColor={"#081839"}
+                          color="white"
+                          _hover={{ backgroundColor: "#081839" }}
+                          fontWeight={"700"}
+                          fontSize={{ base: "14px", md: "16px", lg: "18px" }}
+                          mt="20px"
+                        >
+                          Book Now
+                        </Button>
+                      </Link>
                     </VStack>
                   </Box>
                 </SimpleGrid>
@@ -265,18 +267,20 @@ const Sailing = () => {
                       >
                         Starts From Rs.{e.prise}
                       </Text>
-                      <Button
-                        w={{ base: "100%", md: "113px" }}
-                        h="40px"
-                        backgroundColor={"#081839"}
-                        color="white"
-                        _hover={{ backgroundColor: "#081839" }}
-                        fontWeight={"700"}
-                        fontSize={{ base: "14px", md: "16px", lg: "18px" }}
-                        mt="20px"
-                      >
-                        Book Now
-                      </Button>
+                      <Link to="/allpackages">
+                        <Button
+                          w={{ base: "100%", md: "113px" }}
+                          h="40px"
+                          backgroundColor={"#081839"}
+                          color="white"
+                          _hover={{ backgroundColor: "#081839" }}
+                          fontWeight={"700"}
+                          fontSize={{ base: "14px", md: "16px", lg: "18px" }}
+                          mt="20px"
+                        >
+                          Book Now
+                        </Button>
+                      </Link>
                     </VStack>
                   </Box>
                 </SimpleGrid>

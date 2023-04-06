@@ -1,10 +1,10 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { testimonials } from "../../UTIL/localstorageauth/PagesData/Data";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Pagination ,Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-SwiperCore.use([Autoplay, Pagination]);
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Carousel = () => {
   return (
@@ -36,7 +36,6 @@ const Carousel = () => {
         autoplay={{ delay: 3000 }}
         navigation={true}
         loop={true}
-        loopFillGroupWithBlank={true}
         pagination={{
           clickable: true,
         }}

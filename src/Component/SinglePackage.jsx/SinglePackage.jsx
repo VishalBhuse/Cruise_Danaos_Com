@@ -1,20 +1,12 @@
 import {
   Box,
-  chakra,
-  Container,
   Stack,
   Text,
   Image,
-  Flex,
-  VStack,
   Button,
   Heading,
   SimpleGrid,
-  StackDivider,
   useColorModeValue,
-  VisuallyHidden,
-  List,
-  ListItem,
   TableContainer,
   Table,
   Thead,
@@ -23,29 +15,62 @@ import {
   Tbody,
   Td,
   HStack,
+  Checkbox,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { GetAPICALL } from "../../Config/Functions/getFun";
 
 const SinglePackage = () => {
   const [details, setDetails] = useState([]);
   const params = useParams();
+  const dispatch = useDispatch();
+  const packcart = useSelector((state) => state.cart.package);
+  // console.log(packcart);
 
   const getPackageData = async () => {
-    await axios
-      .get(
-        `https://backenddanaoscruise-production-ed75.up.railway.app/managepackage/${params.package_id}`
-      )
+    GetAPICALL(`managepackage/${params.package_id}`)
       .then((res) => {
         // console.log(res.data.length);
-        setDetails(res.data);
+        setDetails(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  console.log(details);
+
+  const [product, setProduct] = useState([]);
+  const [checkedMap, setCheckedMap] = useState({});
+  const handleCheckboxChange = (event, obj) => {
+    const checkboxId = event.target.id;
+    const isChecked = event.target.checked;
+
+    setCheckedMap((prevCheckedMap) => {
+      if (isChecked) {
+        return { ...prevCheckedMap, [checkboxId]: obj };
+      } else {
+        const { [checkboxId]: removed, ...rest } = prevCheckedMap;
+        return rest;
+      }
+    });
+
+    const checkedObjects = Object.values({
+      ...checkedMap,
+      [checkboxId]: isChecked ? obj : undefined,
+    }).filter(Boolean);
+
+    setProduct(checkedObjects);
+  };
+
+  const handleChecout = () => {
+    // console.log(details, "details");
+    // console.log(product, "prod");
+
+    const newData = [{ details: { ...details }, prod: { ...product } }];
+    dispatch({ type: "UPDATE_TO_CART", payload: { ...newData } });
+  };
 
   useEffect(() => {
     getPackageData();
@@ -84,7 +109,12 @@ const SinglePackage = () => {
             >
               {details.packageName}
             </Heading>
-            <Text mt="1" color="#19376D" fontSize={"2xl"} fontWeight={"500"}>
+            <Text
+              mt="1"
+              color="blue.600"
+              fontSize={{ base: "1xl", sm: "2xl", lg: "2xl" }}
+              fontWeight={"500"}
+            >
               {details.heading1}
             </Text>
           </Box>
@@ -103,54 +133,75 @@ const SinglePackage = () => {
 
               <Box w="90%" mx="auto">
                 <HStack justifyContent={"space-between"}>
-                  <Text as={"span"} fontWeight={"bold"}  textTransform='capitalize'>
+                  <Text
+                    as={"span"}
+                    fontWeight={"bold"}
+                    textTransform="capitalize"
+                  >
                     Sailing Date:
                   </Text>
-                  <Text  textTransform='capitalize' >{details.sailingDate}</Text>
+                  <Text fontWeight={"600"}>{details.sailingDate}</Text>
                 </HStack>
                 <HStack justifyContent={"space-between"}>
-                  <Text as={"span"} fontWeight={"bold"}  textTransform='capitalize'>
+                  <Text
+                    as={"span"}
+                    fontWeight={"bold"}
+                    textTransform="capitalize"
+                  >
                     Rating:
                   </Text>
-                  <Text fontWeight={'600'}>{details.rating}</Text>
+                  <Text fontWeight={"600"}>{details.rating}</Text>
                 </HStack>
                 <HStack justifyContent={"space-between"}>
-                  <Text as={"span"} fontWeight={"bold"}  textTransform='capitalize'>
+                  <Text
+                    as={"span"}
+                    fontWeight={"bold"}
+                    textTransform="capitalize"
+                  >
                     availability:
                   </Text>
-                  <Text fontWeight={'600'}>{details.availability}</Text>
+                  <Text fontWeight={"600"}>{details.availability}</Text>
                 </HStack>
               </Box>
             </Box>
             <TableContainer>
-              <Table variant="simple" overflowX="auto">
+              <Table
+                variant="simple"
+                overflowX="auto"
+                size={["sm", "md", "md"]}
+              >
                 <Thead style={{ backgroundColor: "#081839" }}>
                   <Tr>
                     <Th
+                      fontSize={["10px", "12px", "12px", "14px", "16px"]}
                       color={"#F1CC5C"}
                       textTransform={"uppercase"}
-                      fontSize={"12px"}
+                    ></Th>
+                    <Th
+                      fontSize={["10px", "12px", "12px", "14px", "16px"]}
+                      color={"#F1CC5C"}
+                      textTransform={"uppercase"}
                     >
                       Tables
                     </Th>
                     <Th
+                      fontSize={["10px", "12px", "12px", "14px", "16px"]}
                       color={"#F1CC5C"}
                       textTransform={"uppercase"}
-                      fontSize={"12px"}
                     >
                       Price
                     </Th>
                     <Th
+                      fontSize={["10px", "12px", "12px", "14px", "16px"]}
                       color={"#F1CC5C"}
                       textTransform={"uppercase"}
-                      fontSize={"12px"}
                     >
                       OfferPrice
                     </Th>
                     <Th
+                      fontSize={["10px", "12px", "12px", "14px", "16px"]}
                       color={"#F1CC5C"}
                       textTransform={"uppercase"}
-                      fontSize={"12px"}
                     >
                       Changes
                     </Th>
@@ -158,8 +209,19 @@ const SinglePackage = () => {
                 </Thead>
                 {details.tables &&
                   details.tables.map((item) => (
-                    <Tbody backgroundColor={"white"}>
+                    <Tbody backgroundColor={"white"} key={item._id}>
                       <Tr key={item.id}>
+                        <Td>
+                          <Checkbox
+                            type="checkbox"
+                            id={item._id}
+                            checked={!!checkedMap[item._id]}
+                            onChange={(event) =>
+                              handleCheckboxChange(event, item)
+                            }
+                          />
+                          {/* <Checkbox onClick={() => handleChekout(item)} /> */}
+                        </Td>
                         <Td>For {item.personSize} Persons</Td>
                         <Td>Rs {item.price}</Td>
                         <Td>Rs {item.offerPrice}</Td>
@@ -171,22 +233,24 @@ const SinglePackage = () => {
             </TableContainer>
           </Stack>
 
-          <Button
-            rounded={"none"}
-            w={"full"}
-            mt={8}
-            size={"lg"}
-            py={"7"}
-            bg={"#081839"}
-            color={useColorModeValue("#F1CC5C", "#F1CC5C")}
-            textTransform={"uppercase"}
-            _hover={{
-              transform: "translateY(2px)",
-              boxShadow: "lg",
-            }}
-          >
-            Add to cart
-          </Button>
+          <Link to="/checkout">
+            <Button
+              rounded={"none"}
+              w={"full"}
+              size={"lg"}
+              py={["5", "6", "7"]}
+              bg={"#081839"}
+              color={useColorModeValue("#F1CC5C", "#F1CC5C")}
+              textTransform={"uppercase"}
+              _hover={{
+                transform: "translateY(2px)",
+                boxShadow: "lg",
+              }}
+              onClick={handleChecout}
+            >
+              Checkout
+            </Button>
+          </Link>
         </Stack>
       </SimpleGrid>
     </Box>

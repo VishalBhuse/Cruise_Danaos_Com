@@ -1,15 +1,15 @@
 import {
   Box,
-  Text,
-  Grid,
-  Button,
-  HStack,
-  VStack,
-  Input,
+  // Text,
+  // Grid,
+  // Button,
+  // HStack,
+  // VStack,
+  // Input,
 } from "@chakra-ui/react";
 import React from "react";
 
-import { HiOutlineArrowRight } from "react-icons/hi";
+// import { HiOutlineArrowRight } from "react-icons/hi";
 
 import Carousel from "../../Component/Home/Carousel";
 import Gallery from "../../Component/Home/Gallery";
@@ -24,7 +24,7 @@ import Calender from "../../Component/Home/Calender";
 const Home = () => {
   return (
     <>
-      <Box w="90%" mx="auto">
+      {/* <Box w="90%" mx="auto">
         <Box
           w="100%"
           bg="url('./img/vishal/homeban.png')"
@@ -170,7 +170,7 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
       {/* <Box mt="-1.5rem" mb="3rem" w="80%" mx="auto" bg="red">
         <Grid
           templateColumns={[

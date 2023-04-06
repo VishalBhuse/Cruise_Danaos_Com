@@ -1,6 +1,8 @@
 import React from "react";
 import { birthData, sailing } from "../../UTIL/localstorageauth/PagesData/Data";
 import { Box, Text, Image, Button, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
 const Birthday = () => {
   return (
     <>
@@ -47,17 +49,19 @@ const Birthday = () => {
                     {item.desc}
                   </Text>
                 </Box>
-                <Button
-                  fontFamily="700"
-                  fontSize={"18px"}
-                  textTransform={"capitalize"}
-                  backgroundColor={"#081839"}
-                  color="#fff"
-                  _hover={{ backgroundColor: "#081839" }}
-                  px="50px"
-                >
-                  Book package
-                </Button>
+                <Link to="allpackages">
+                  <Button
+                    fontFamily="700"
+                    fontSize={"18px"}
+                    textTransform={"capitalize"}
+                    backgroundColor={"#081839"}
+                    color="#fff"
+                    _hover={{ backgroundColor: "#081839" }}
+                    px="50px"
+                  >
+                    Book package
+                  </Button>
+                </Link>
               </VStack>
             </Box>
           </SimpleGrid>
@@ -120,18 +124,20 @@ const Birthday = () => {
                       >
                         Starts From Rs.{e.prise}
                       </Text>
-                      <Button
-                        w={{ base: "100%", md: "113px" }}
-                        h="40px"
-                        backgroundColor={"#081839"}
-                        color="white"
-                        _hover={{ backgroundColor: "#081839" }}
-                        fontWeight={"700"}
-                        fontSize={{ base: "14px", md: "16px", lg: "18px" }}
-                        mt="20px"
-                      >
-                        Book Now
-                      </Button>
+                      <Link to="allpackages">
+                        <Button
+                          w={{ base: "100%", md: "113px" }}
+                          h="40px"
+                          backgroundColor={"#081839"}
+                          color="white"
+                          _hover={{ backgroundColor: "#081839" }}
+                          fontWeight={"700"}
+                          fontSize={{ base: "14px", md: "16px", lg: "18px" }}
+                          mt="20px"
+                        >
+                          Book Now
+                        </Button>
+                      </Link>
                     </VStack>
                   </Box>
                 </SimpleGrid>

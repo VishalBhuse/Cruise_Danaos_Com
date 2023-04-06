@@ -1,33 +1,21 @@
 import { Box, HStack, Image, SimpleGrid, VStack } from "@chakra-ui/react";
 import { Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
-import axios from "axios";
 import { Rating } from "../../Rating/Rating";
 import DeletePackageModal from "./DeleteModal/DeletePackageModal";
 import AddTableModal from "./PackageModal/AddTableModal";
 import DeleteTableModal from "./DeleteModal/DeleteTableModal";
 import AddPackage from "./PackageModal/AddPackage";
+import { packageAPI } from "../../Redux/action/package.action";
+import { useDispatch, useSelector } from "react-redux";
 
 const AdminPackage = () => {
-  const [manage, setManage] = useState([]);
-
-  const getManageData = async () => {
-    await axios
-      .get(
-        "https://backenddanaoscruise-production-ed75.up.railway.app/managepackage"
-      )
-      .then((res) => {
-        // console.log(res.data);
-        setManage(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const dispatch = useDispatch();
+  const manage = useSelector((state) => state.package.package);
 
   useEffect(() => {
-    getManageData();
+    dispatch(packageAPI());
   }, []);
   return (
     <>
@@ -86,7 +74,7 @@ const AdminPackage = () => {
                       "flex-end",
                     ]}
                   >
-                    <AddPackage getData={getManageData} />
+                    <AddPackage />
                   </HStack>
                 </Box>
               </HStack>
@@ -117,7 +105,10 @@ const AdminPackage = () => {
                       <Box mt={2} textTransform="capitalize">
                         <SimpleGrid columns={[1, 1, 2, 2, 2]} spacing={2}>
                           <Box height="12rem">
-                            <Image src={"./img/serv2.png"} boxSize="100%" />
+                            <Image
+                              src={"./img/vishal/hmg2.png"}
+                              boxSize="100%"
+                            />
                           </Box>
                           <Box height="auto" textTransform="capitalize">
                             <VStack
@@ -171,19 +162,11 @@ const AdminPackage = () => {
                                   {
                                     <DeletePackageModal
                                       id={pac._id}
-                                      getData={getManageData}
                                       packName={pac.packageName}
                                     />
                                   }
                                 </Text>
-                                <Text>
-                                  {
-                                    <AddTableModal
-                                      id={pac._id}
-                                      getData={getManageData}
-                                    />
-                                  }
-                                </Text>
+                                <Text>{<AddTableModal id={pac._id} />}</Text>
                               </HStack>
                             </VStack>
                           </Box>
@@ -246,7 +229,6 @@ const AdminPackage = () => {
                                     <DeleteTableModal
                                       packageId={pac._id}
                                       tableid={item._id}
-                                      getData={getManageData}
                                     />
                                   </Text>
                                 </HStack>
@@ -267,86 +249,3 @@ const AdminPackage = () => {
 };
 
 export default AdminPackage;
-
-// <br />
-// <br />
-// <Box
-//   margin={"auto"}
-//   display={"flex"}
-//   justifyContent={"center"}
-//   alignItems={"center"}
-// >
-//   <Grid
-//     templateColumns={[
-//       "repeat(1, 1fr)",
-//       "repeat(1, 1fr)",
-//       "repeat(1, 1fr)",
-//       "repeat(2, 1fr)",
-//     ]}
-//     textAlign={"left"}
-//     gap={3}
-//   >
-//     {manage &&
-//       manage.map((e) => (
-//         <GridItem width={["360px", "400px", "780px", "567px"]}>
-//           {/* table div */}
-//           <Box>
-//             <TableContainer>
-//               <Table variant="simple" overflowX="auto">
-//                 <Thead style={{ borderBottom: "red" }}>
-//                   <Tr>
-//                     <Th
-//                       color={"black"}
-//                       textTransform={"lowercase"}
-//                       fontSize={"12px"}
-//                     >
-//                       Tables
-//                     </Th>
-//                     <Th
-//                       color={"black"}
-//                       textTransform={"lowercase"}
-//                       fontSize={"12px"}
-//                     >
-//                       Price
-//                     </Th>
-//                     <Th
-//                       color={"black"}
-//                       textTransform={"lowercase"}
-//                       fontSize={"12px"}
-//                     >
-//                       OfferPrice
-//                     </Th>
-//                     <Th
-//                       color={"black"}
-//                       textTransform={"lowercase"}
-//                       fontSize={"12px"}
-//                     >
-//                       Changes
-//                     </Th>
-//                   </Tr>
-//                 </Thead>
-//                 {e.tables &&
-//                   e.tables.map((item) => (
-//                     <Tbody backgroundColor={"white"}>
-//                       <Tr key={item.id}>
-//                         <Td>For {item.personSize} Persons</Td>
-//                         <Td>Rs {item.price}</Td>
-//                         <Td>Rs {item.offerPrice}</Td>
-//                         <Td>Rs {item.price - item.offerPrice}</Td>
-//                         <Td>
-//                           <DeleteTableModal
-//                             packageId={e._id}
-//                             tableid={item._id}
-//                             getData={getManageData}
-//                           />
-//                         </Td>
-//                       </Tr>
-//                     </Tbody>
-//                   ))}
-//               </Table>
-//             </TableContainer>
-//           </Box>
-//         </GridItem>
-//       ))}
-//   </Grid>
-// </Box>

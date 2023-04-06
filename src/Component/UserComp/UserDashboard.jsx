@@ -1,36 +1,20 @@
-import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Text,
-  Image,
-  useDisclosure,
-  HStack,
-  SimpleGrid,
-  VStack,
-} from "@chakra-ui/react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { Box, Text, Image, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
 import EditProfileModal from "./ProfileModal/EditProfileModal";
+import { GetUserApi } from "../../Redux/action/user.action";
+import { useDispatch, useSelector } from "react-redux";
 
 const UserDashboard = () => {
   const auth = JSON.parse(localStorage.getItem("auth")) ?? { role: null };
-  const [user, setuser] = useState({});
-
-  const getData = () => {
-    axios
-      .get(
-        `https://backenddanaoscruise-production-ed75.up.railway.app/user/user/${auth._id}`
-      )
-      .then((r) => setuser(r.data[0]))
-      .catch((err) => console.log(err));
-  };
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getData();
+    dispatch(GetUserApi(auth._id));
   }, []);
 
   return (
     <>
-
       <Box w="90%" mx="auto" bg="#081839">
         <Box
           w="100%"
@@ -50,12 +34,7 @@ const UserDashboard = () => {
                 My Profile
               </Text>
 
-              <EditProfileModal
-                getData={getData}
-                authid={auth._id}
-                user={user}
-                setuser={setuser}
-              />
+              <EditProfileModal {...user} />
             </HStack>
           </Box>
 
@@ -90,6 +69,7 @@ const UserDashboard = () => {
                       fontSize={["15px", "19px", "20px", "24px", "24px"]}
                       fontWeight={"600"}
                       backgroundColor={"#D2E1FF"}
+                      textTransform="capitalize"
                     >
                       {user.firstName}
                     </Text>
@@ -108,6 +88,7 @@ const UserDashboard = () => {
                       fontSize={["15px", "19px", "20px", "24px", "24px"]}
                       fontWeight={"600"}
                       backgroundColor={"#D2E1FF"}
+                      textTransform="capitalize"
                     >
                       {user.lastName}
                     </Text>

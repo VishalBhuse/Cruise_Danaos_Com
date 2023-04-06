@@ -87,7 +87,7 @@ export const worldwide = [
 
 export const travelData = [
   {
-    imgurl: "./img/travel1.png",
+    imgurl: "./img/vishal/travel1.png",
     heading:
       "If you’ve harboured fantasies of sailing into the sunset in grandeur,",
     title: "Yacht Overview",
@@ -95,21 +95,21 @@ export const travelData = [
     price: "5000",
   },
   {
-    imgurl: "./img/travel2.png",
+    imgurl: "./img/vishal/travel2.png",
     heading: "Capttain oriel blake talks to all at sea's carol bareuther",
     title: "Upper Foredeck ",
     rating: 4.5,
     price: "4000",
   },
   {
-    imgurl: "./img/travel3.png",
+    imgurl: "./img/vishal/travel3.png",
     heading: "Scale fresh heights to support tall ships",
     title: "Upper Aft Deck ",
     rating: 4.5,
     price: "4000",
   },
   {
-    imgurl: "./img/travel4.png",
+    imgurl: "./img/vishal/travel4.png",
     heading:
       "For boat lovers by allyson klass the royal albatross has something exciting this festive season",
     title: "FOR BOAT LOVERS",
@@ -117,14 +117,14 @@ export const travelData = [
     price: "4000",
   },
   {
-    imgurl: "./img/travel5.png",
+    imgurl: "./img/vishal/travel5.png",
     heading: "Royal Albatross opens to public at resorts world sentosa",
     title: "SET SAIL ON THE ROYAL ALBATROSS",
     rating: 3.5,
     price: "4000",
   },
   {
-    imgurl: "./img/travel6.png",
+    imgurl: "./img/vishal/travel6.png",
     heading:
       "mission rasi mission rasi, involves two replica 19th Century Cornish Pilot Boats being rowed over",
     title: "MISSION RASI",
@@ -136,21 +136,21 @@ export const travelData = [
 export const sailing = [
   {
     id: 1,
-    imgurl: "./img/party-birth.png",
+    imgurl: "./img/vishal/party-birth.png",
     title: " Birthday Package",
     prise: "399",
     desc: "Birthday Dinner Cruise Super Yacht Royal Albatross",
   },
   {
     id: 2,
-    imgurl: "./img/party2-birth.png",
+    imgurl: "./img/vishal/party2-birth.png",
     title: "I'm Sorry Package",
     prise: "399",
     desc: "If you are Looking to host your dream wedding,the Royal Albatross is the perfect venue.",
   },
   {
     id: 3,
-    imgurl: "./img/party3-birth.png",
+    imgurl: "./img/vishal/party3-birth.png",
     title: "Anniversery Package",
     prise: "399",
     desc: "As our saying goes, Marriages are made in heaven; but celebrated aboard the Royal Albatross!",
@@ -177,99 +177,59 @@ export const birthData = [
 ];
 
 export const ourProd = [
-  { id: 1, text: "Breakfast Cruise", img: "./img/prod1.png", alt: "prod1" },
-  { id: 2, text: "City Lights", img: "./img/prod2.png", alt: "prod2" },
-  { id: 3, text: "Dinner Cruise", img: "./img/prod3.png", alt: "prod3" },
-  { id: 4, text: "Corporate Cruise", img: "./img/prod4.png", alt: "prod4" },
-  { id: 5, text: "Dining Experiences", img: "./img/prod5.png", alt: "prod5" },
-  { id: 6, text: "Proposal Cruise", img: "./img/prod6.png", alt: "prod6" },
-];
-
-export const homeService = [
   {
     id: 1,
-    text: "Cruise Only",
-    text2: "SUNSET DINNER CRUISE",
-    text3:
-      "Be it a romantic date or a special celebration with family and friends our Sunset Dinner Cruise is set to take you on a memorable journey",
-    text4: "12/03/2023",
-    text5: "Lorem ipsum",
-    text6: "Lorem ipsum,Lorem ...",
-    Rating: "4.30 (212 Reviews)",
-    img: "./img/serv1.png",
-    from: "299",
-    alt: "serv1",
+    text: "Breakfast Cruise",
+    img: "./img/vishal/prod1.png",
+    alt: "prod1",
   },
-  {
-    id: 2,
-    text: "Cruise Only",
-    text2: "MAST CLIMB",
-    text3:
-      "Royal Albatross City Lights Dinner Cruise, Singapore’s most romantic dining experience.",
-    text4: "12/03/2023",
-    text5: "Lorem ipsum",
-    text6: "Lorem ipsum,Lorem ...",
-    Rating: "4.30 (212 Reviews)",
-    from: "299",
-    img: "./img/serv2.png",
-    alt: "serv2",
-  },
-  {
-    id: 3,
-    text: "Best Seler",
-    text2: "MENU UPGRADES",
-    text3:
-      "Upgrade your dining experience today to a 7-course dinner or 7-course with wine pairing, prepared freshly onboard the Royal Albatross. ",
-    text4: "12/03/2023",
-    text5: "Lorem ipsum",
-    text6: "Lorem ipsum,Lorem ...",
-    Rating: "4.30 (212 Reviews)",
-    img: "./img/serv3.png",
-    from: "299",
-    alt: "serv3",
-  },
+  { id: 2, text: "City Lights", img: "./img/vishal/prod2.png", alt: "prod2" },
+  { id: 3, text: "Dinner Cruise", img: "./img/vishal/prod3.png", alt: "prod3" },
   {
     id: 4,
-    text: "Top Rated",
-    text2: "DOG CRUISE",
-    text3:
-      "Go on a pet-cation with you and your furkid and set sail on a unique and memorable experience",
-    text4: "12/03/2023",
-    text5: "Lorem ipsum",
-    text6: "Lorem ipsum,Lorem ...",
-    Rating: "4.30 (212 Reviews)",
-    from: "299",
-    img: "./img/serv4.png",
-    alt: "serv4",
+    text: "Corporate Cruise",
+    img: "./img/vishal/prod4.png",
+    alt: "prod4",
+  },
+  {
+    id: 5,
+    text: "Dining Experiences",
+    img: "./img/vishal/prod5.png",
+    alt: "prod5",
+  },
+  {
+    id: 6,
+    text: "Proposal Cruise",
+    img: "./img/vishal/prod6.png",
+    alt: "prod6",
   },
 ];
-
 
 export const sailingsixdata = [
   {
     id: 1,
-    imgurl: "./img/party-birth.png",
+    imgurl: "./img/vishal/party-birth.png",
     title: " Birthday Package",
     prise: "399",
     desc: "Birthday Dinner Cruise Super Yacht Royal Albatross",
   },
   {
     id: 2,
-    imgurl: "./img/party2-birth.png",
+    imgurl: "./img/vishal/party2-birth.png",
     title: "I'm Sorry Package",
     prise: "399",
     desc: "If you are Looking to host your dream wedding,the Royal Albatross is the perfect venue.",
   },
   {
     id: 3,
-    imgurl: "./img/party3-birth.png",
+    imgurl: "./img/vishal/party3-birth.png",
     title: "Anniversery Package",
     prise: "399",
     desc: "As our saying goes, Marriages are made in heaven; but celebrated aboard the Royal Albatross!",
   },
   {
     id: 4,
-    imgurl: "./img//vishal/pack3.png",
+    imgurl: "./img/vishal/pack3.png",
     title: "Wedding Packages",
     prise: "399",
     desc: "Experience Love Events offers a range of packages for events and weddings",
@@ -287,5 +247,56 @@ export const sailingsixdata = [
     title: "Marriage Package",
     prise: "399",
     desc: "A Romantic Vacation with the Love of your life is the perfect fuel to rekindle the romance that has taken a backseat to hurried life",
+  },
+];
+
+export const packagePageData = [
+  {
+    id: 1,
+    text: "Birthday Packages",
+    start: "Starts From Rs.499",
+    desc: "Celebrate your special birthday with a set of deals and a unique experience with beautiful views that can only be found on board the Royal Albatross.",
+    img: "./img/vishal/pack1.png",
+    alt: "prod1",
+  },
+  {
+    id: 2,
+    text: "Group Birthday Party",
+    img: "./img/vishal/pack2.png",
+    desc: "Secrets are best unveiled at unforgettable locations and what better way than to deliver an unforgettable surprise with our celebration packages?",
+    start: "Starts From Rs.499",
+    alt: "prod2",
+  },
+  {
+    id: 3,
+    text: "Anniversary Packages",
+    img: "./img/vishal/pack3.png",
+    desc: "Our wedding anniversary packages have been carefully curated to eternalize this important day and celebrate another beautiful milestone in your lives.",
+    start: "Starts From Rs.499",
+    alt: "prod3",
+  },
+  {
+    id: 4,
+    text: "I am Sorry Packages",
+    img: "./img/vishal/pack4.png",
+    desc: "why not say “I’m Sorry” with our unique dinner cruise apology package onboard our 4-masted 22 sail superyacht that will surely calm even the most choppy waters",
+    start: "Starts From Rs.499",
+    alt: "prod4",
+  },
+  {
+    id: 5,
+    text: "Proposal Packages",
+    img: "./img/vishal/pack5.png",
+    desc: "If you are looking for something truly special, unique, and meaningful, simply give us a call and take a moment with us while we sweep your special someone off their feet. A moment you will definitely remember and be proud of for many years to come.",
+    start: "Starts From Rs.499",
+    alt: "prod5",
+  },
+  {
+    id: 6,
+    text: "Team Bonding Packages",
+    img: "./img/vishal/pack6.png",
+    desc: "Looking for a unique and spacious spot to host your corporate events? We have the perfect venue just for you.",
+    start: "Starts From Rs.499",
+    alt: "prod6",
   },
 ];

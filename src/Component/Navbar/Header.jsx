@@ -5,7 +5,6 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Text,
   Image,
   Grid,
   GridItem,
@@ -55,17 +54,9 @@ const Header = () => {
               <HStack>
                 <Image
                   height={"100px"}
-                  src="./img/vishal/footerlogo.png"
-                  alt="log"
-                ></Image>
-                {/* <Text
-                  color="#081839"
-                  fontWeight="700"
-                  fontSize={{ sm: "14px", md: "20px", lg: "34px" }}
-                  lineHeight="41px"
-                >
-                  DANAOS
-                </Text> */}
+                  src="img/vishal/footerlogo.png"
+                  alt="logo"
+                />
               </HStack>
             </Link>
           </GridItem>
@@ -102,124 +93,123 @@ const Header = () => {
             justifyContent={"center"}
             textAlign="center"
             alignItems="center"
-            >
-           <Text  display={["none", "none", "block"]}>
-            <Box
-              gap={"10px"}
-              display="flex"
-              justifyContent={"center"}
-              textAlign="center"
-              alignItems="center"
-              py="3"
-            >
-              {auth.role === "admin" ? (
-                <Button
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                  onClick={() => {
-                    dispatch({ type: LOGOUT });
-                    navigate("/");
-                  }}
-                >
-                  {isAuth && <RiLogoutCircleFill />}
-                </Button>
-              ) : auth.role ? (
-                <Button
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                  onClick={() => {
-                    dispatch({ type: LOGOUT });
-                    navigate("/");
-                  }}
-                >
-                  {isAuth && <RiLogoutCircleFill />}
-                </Button>
-              ) : (
-                <Button
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                  onClick={handleLogin}
-                >
-                  Login
-                </Button>
-              )}
+          >
+            <Box display={["none", "none", "block"]}>
+              <Box
+                gap={"10px"}
+                display="flex"
+                justifyContent={"center"}
+                textAlign="center"
+                alignItems="center"
+                py="3"
+              >
+                {auth.role === "admin" ? (
+                  <Button
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                    onClick={() => {
+                      dispatch({ type: LOGOUT });
+                      navigate("/");
+                    }}
+                  >
+                    {isAuth && <RiLogoutCircleFill />}
+                  </Button>
+                ) : auth.role ? (
+                  <Button
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                    onClick={() => {
+                      dispatch({ type: LOGOUT });
+                      navigate("/");
+                    }}
+                  >
+                    {isAuth && <RiLogoutCircleFill />}
+                  </Button>
+                ) : (
+                  <Button
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                    onClick={handleLogin}
+                  >
+                    Login
+                  </Button>
+                )}
 
-              {auth.role === "admin" ? (
-                <Button
-                  onClick={() => navigate("/admindetails")}
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                >
-                  Dashboard
-                </Button>
-              ) : auth.role ? (
-                <Button
-                  onClick={() => navigate("/userprofile")}
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                >
-                  <FaUserAlt />
-                </Button>
-              ) : (
-                <Button
-                  onClick={handleSignup}
-                  backgroundColor={"#081839"}
-                  size="lg"
-                  color={"#F2CD5C"}
-                  _hover={{
-                    backgroundColor: "#081839",
-                    color: "#F2CD5C",
-                  }}
-                  fontWeight="700"
-                  fontSize={["15px", "16px", "22px", "22px"]}
-                  px={["5", "8", "8", "10"]}
-                >
-                  Sign-Up
-                </Button>
-              )}
+                {auth.role === "admin" ? (
+                  <Button
+                    onClick={() => navigate("/admindetails")}
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                  >
+                    Dashboard
+                  </Button>
+                ) : auth.role ? (
+                  <Button
+                    onClick={() => navigate("/userprofile")}
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                  >
+                    <FaUserAlt />
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={handleSignup}
+                    backgroundColor={"#081839"}
+                    size="lg"
+                    color={"#F2CD5C"}
+                    _hover={{
+                      backgroundColor: "#081839",
+                      color: "#F2CD5C",
+                    }}
+                    fontWeight="700"
+                    fontSize={["15px", "16px", "22px", "22px"]}
+                    px={["5", "8", "8", "10"]}
+                  >
+                    Sign-Up
+                  </Button>
+                )}
+              </Box>
             </Box>
-
-           </Text>
           </GridItem>
         </Grid>
       </Box>
@@ -234,4 +224,4 @@ const Header = () => {
     </Box>
   );
 };
-export default Header;
+export default React.memo(Header);

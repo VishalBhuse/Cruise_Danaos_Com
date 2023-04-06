@@ -13,32 +13,32 @@ import {
   Input,
   HStack,
   Select,
+  useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { FaEdit } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { userEditAPI } from "../../../Redux/action/user.action";
 
-const EditProfileModal = ({ getData, authid, user, setuser }) => {
+const EditProfileModal = (user) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [info, setinfo] = useState(user);
+  const toast = useToast();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setuser({ ...user, [name]: value });
+    setinfo({ ...info, [name]: value });
   };
+  const dispatch = useDispatch();
   const getEditUser = () => {
-    axios
-      .patch(
-        `https://backenddanaoscruise-production-ed75.up.railway.app/user/edituser/${authid}`,
-        {
-          ...user,
-        }
-      )
-      .then((r) => {
-        console.log(r);
-        onClose();
-        getData();
-      })
-      .catch((err) => console.log(err));
+    dispatch(userEditAPI(info._id, { ...info }));
+    toast({
+      description: "Profile Updated Successfully",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top-center",
+    });
+    onClose();
   };
   return (
     <>
@@ -70,7 +70,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="firstName"
                   type="text"
                   placeholder="First name"
-                  value={user.firstName}
+                  value={info.firstName}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -81,7 +81,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="lastName"
                   type="text"
                   placeholder="Last name"
-                  value={user.lastName}
+                  value={info.lastName}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -94,7 +94,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  value={user.email}
+                  value={info.email}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -105,7 +105,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="mobilenumber"
                   type="number"
                   placeholder="Mobile Number"
-                  value={user.mobilenumber}
+                  value={info.mobilenumber}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -117,7 +117,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                 <Select
                   name="gender"
                   placeholder="Gender"
-                  value={user.gender}
+                  value={info.gender}
                   onChange={handleChange}
                 >
                   <option value="Gender">Gender</option>
@@ -132,7 +132,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="dateofbirth"
                   type="date"
                   placeholder="Date of Birth"
-                  value={user.dateofbirth}
+                  value={info.dateofbirth}
                   onChange={handleChange}
                 />
               </FormControl>
@@ -145,7 +145,7 @@ const EditProfileModal = ({ getData, authid, user, setuser }) => {
                   name="address"
                   type="text"
                   placeholder="Address"
-                  value={user.address}
+                  value={info.address}
                   onChange={handleChange}
                 />
               </FormControl>

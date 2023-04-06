@@ -33,7 +33,7 @@ const AdminNavbar = () => {
               src="./img/vishal/footerlogo.png"
               alt="d"
             ></Image>
-
+            {/* 
             <Text
               color="#081839"
               fontWeight="700"
@@ -41,7 +41,7 @@ const AdminNavbar = () => {
               lineHeight="41px"
             >
               DANAOS
-            </Text>
+            </Text> */}
           </HStack>
         </Link>
 
@@ -99,7 +99,7 @@ const AdminNavbar = () => {
                 textDecorationThickness: "4px",
               }}
               cursor={"pointer"}
-            fontWeight="700"
+              fontWeight="700"
             >
               Booking Details
             </Text>
@@ -114,12 +114,12 @@ const AdminNavbar = () => {
                 textDecorationThickness: "4px",
               }}
               cursor={"pointer"}
-            fontWeight="700"
+              fontWeight="700"
             >
               Manage Packages
             </Text>
           </Link>
-          
+
           <Link to="/adminbill">
             <Text
               _hover={{
@@ -130,7 +130,7 @@ const AdminNavbar = () => {
                 textDecorationThickness: "4px",
               }}
               cursor={"pointer"}
-            fontWeight="700"
+              fontWeight="700"
             >
               Manage Bills
             </Text>
@@ -145,7 +145,7 @@ const AdminNavbar = () => {
                 textDecorationThickness: "4px",
               }}
               cursor={"pointer"}
-            fontWeight="700"
+              fontWeight="700"
             >
               Invoice
             </Text>

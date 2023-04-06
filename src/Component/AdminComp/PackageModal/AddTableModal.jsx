@@ -11,44 +11,43 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
-  useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { packagTableeAddAPI } from "../../../Redux/action/package.action";
+import { toast } from "react-toastify";
 
-const AddTableModal = ({ id, getData }) => {
+const AddTableModal = ({ id }) => {
   // console.log(id)
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [addTable, setaddTable] = useState({});
-  const toast = useToast();
+  const dispatch = useDispatch();
+  const [addTable, setaddTable] = useState({
+    personSize: "",
+    price: "",
+    offerPrice: "",
+  });
 
   const handleAdd = (e) => {
-    e.preventDefault();
     let { name, value } = e.target;
     setaddTable({ ...addTable, [name]: value });
   };
 
   const handleAddTable = async () => {
-    const payload = {
-      personSize: addTable.personSize,
-      price: addTable.price,
-      offerPrice: addTable.offerPrice,
-    };
-    await axios
-      .post(
-        `https://backenddanaoscruise-production-ed75.up.railway.app/managepackage/tables/${id}`,
-        payload
-      )
-      .then(() => {
-        toast({
-          description: "Table Value Added successfully",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top-center",
-        });
-        getData();
+    if (
+      addTable.personSize !== "" &&
+      addTable.price !== "" &&
+      addTable.offerPrice !== ""
+    ) {
+      dispatch(packagTableeAddAPI(id, addTable));
+
+      setaddTable({});
+    } else {
+      toast.error("Package Table Not Added.", {
+        position: "top-left",
+        theme: "colored",
+        autoClose: 3000,
       });
+    }
   };
 
   return (

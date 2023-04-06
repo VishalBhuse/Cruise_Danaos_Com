@@ -32,7 +32,7 @@ const SailWithUs = () => {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
-              height={{ base: "200px", md: "300px", lg: "300px" }}
+              height={{ base: "300px", md: "300px", lg: "300px" }}
               display="grid"
               placeItems={"center"}
             >

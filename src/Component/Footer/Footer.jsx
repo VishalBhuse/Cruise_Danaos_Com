@@ -18,6 +18,7 @@ import {
 import { HiLocationMarker } from "react-icons/hi";
 import { IoIosMail } from "react-icons/io";
 import { Link } from "react-router-dom";
+import React from "react";
 const Footer = () => {
   return (
     <Box
@@ -26,15 +27,15 @@ const Footer = () => {
       mt="2"
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid
-          columns={[1, 1, 2, 3, 4]}
-          // templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }}
-          spacing={"5rem"}
-        >
+        <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={"5rem"}>
           <Stack spacing={3}>
             <Box>
               <Link to="/">
-                <Image src="./img/footerlogo.png" alt="fds" boxSize={"150px"} />
+                <Image
+                  src="./img/vishal/footerlogo.png"
+                  alt="fds"
+                  boxSize={"150px"}
+                />
               </Link>
             </Box>
             <Text
@@ -178,14 +179,14 @@ const Footer = () => {
                   href="https://www.facebook.com/danaoscruise"
                   target={"_blank"}
                 >
-                  <Image src="./img/logos/BFB.png" w="19px" />
+                  <Image src="./img/vishal/BFB.png" w="19px" alt="fbimg" />
                 </a>
-                <Image src="./img/logos/Btwit.png" w="19px" />
+                <Image src="./img/vishal/Btwit.png" w="19px" alt="twitimg" />
                 <a
                   href="https://www.instagram.com/danaoscruise"
                   target="_blank"
                 >
-                  <Image src="./img/logos/Binsta.png" w="19px" />
+                  <Image src="./img/vishal/Binsta.png" w="19px" alt="insta" />
                 </a>
               </HStack>
             </Box>
@@ -195,4 +196,4 @@ const Footer = () => {
     </Box>
   );
 };
-export default Footer;
+export default React.memo(Footer);

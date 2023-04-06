@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "../Component/Footer/Footer";
 import Navbar from "../Component/Navbar/Navbar";
@@ -24,6 +24,8 @@ import UserNavbar from "../Component/UserComp/UserNavbar";
 import RequireAuth from "../HOC/RequiredAuth";
 import Unauth from "../Component/Unauth/Unauth";
 import SinglePackage from "../Component/SinglePackage.jsx/SinglePackage";
+import AllPackage from "../Component/AllPackage/AllPackage";
+import Checkout from "../Component/Checkout/Checkout";
 
 const routes = [
   {
@@ -115,6 +117,10 @@ const routes = [
     element: <Unauth />,
   },
   {
+    path: "/allpackages",
+    element: <AllPackage />,
+  },
+  {
     path: "/singlepackage/:package_id",
     element: <SinglePackage />,
   },
@@ -122,9 +128,21 @@ const routes = [
     path: "*",
     element: <Pnf />,
   },
+  {
+    path: "checkout",
+    element: (
+      <RequireAuth>
+        <Checkout />
+      </RequireAuth>
+    ),
+  },
 ];
 const AllRoute = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -141,7 +159,6 @@ const AllRoute = () => {
           <Route key={index} path={path} element={element} />
         ))}
       </Routes>
-
       <Footer />
       <Scroll />
     </>

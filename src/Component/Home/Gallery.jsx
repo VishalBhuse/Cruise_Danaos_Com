@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Text, Grid, Image, Button } from "@chakra-ui/react";
 import { HiOutlineArrowRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
@@ -35,20 +36,22 @@ const Gallery = () => {
       </Grid>
 
       <Box w="100%" mx="auto" textAlign={"center"} my={{ base: "5", md: "10" }}>
-        <Button
-          p="1rem"
-          py='1.5rem'
-          fontWeight="700"
-          fontSize={{ base: "18px", md: "30px" }}
-          _hover={{
-            background: "linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)",
-          }}
-          background="linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)"
-          textTransform={"capitalize"}
-        >
-          view more &nbsp;
-          <HiOutlineArrowRight />
-        </Button>
+        <Link to="gallery">
+          <Button
+            p="1rem"
+            py="1.5rem"
+            fontWeight="700"
+            fontSize={{ base: "18px", md: "30px" }}
+            _hover={{
+              background: "linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)",
+            }}
+            background="linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)"
+            textTransform={"capitalize"}
+          >
+            view more &nbsp;
+            <HiOutlineArrowRight />
+          </Button>
+        </Link>
       </Box>
 
       <Box borderBottom={"2px solid #1E1E1E"} my="2">
