@@ -51,6 +51,7 @@ const AllPackage = () => {
                 src="./img/vishal/pack4.png"
                 alt="vishal/pack4.png"
                 borderRadius="lg"
+                w="100%"
               />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{item.packageName}</Heading>

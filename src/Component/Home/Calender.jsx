@@ -11,6 +11,7 @@ import {
   VStack,
   GridItem,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Calender = () => {
   const [value, onChange] = useState(new Date());
@@ -222,7 +223,7 @@ const Calender = () => {
                   mx={"auto"}
                   my={2}
                 >
-                  Start Basic Cruise Search
+                  <Link to="/allpackages">Start Basic Cruise Search</Link>
                 </Button>
                 <Button
                   borderRadius={"10px"}
@@ -238,7 +239,7 @@ const Calender = () => {
                   mx={"auto"}
                   my={2}
                 >
-                  Start Basic Cruise Search
+                  <Link to="/allpackages">Start Basic Cruise Search</Link>
                 </Button>
               </HStack>
             </Box>

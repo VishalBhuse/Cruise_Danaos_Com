@@ -67,19 +67,19 @@ const Sailing = () => {
             fontSize={{ sm: "5px", md: "5px", lg: "15px", xl: "20px" }}
           >
             As the sun melts into the horizon and nightfall takes its place, our
-            majestic Danaos Tourism comes to life hosting guests enjoying our
+            Danaos Tourism comes to life hosting guests enjoying our
             award-winning Sunset Sail and City Lights Dinner Cruise. Voted the
             Outstanding Attraction Experience 2022 by the Singapore Tourism
             Board, these sentiments are echoed internationally by Tripadvisor
             winning the Traveler’s Choice Award for the last 3 consecutive years
             and taking top honours with the Best of the Best accolade in 2022
-            putting Royal Albatross in the top 1% of attractions worldwide.
+            putting Nauti Amigo in the top 1% of attractions worldwide.
             <br />
             <br />
             Our dine and sail packages are perfect for celebrating in style, be
             it a romantic date, a special birthday or anniversary, or simply an
             opportunity to spend quality time with family and friends, you are
-            assured of an unforgettable evening with Royal Albatross and its
+            assured of an unforgettable evening with Nauti Amigo and its
             award-winning crew. Savour the gastronomical delights of our
             7-course dinner, complemented with a wine tasting session to
             complement your delectable meal. Experience an unobstructed view of
@@ -96,8 +96,8 @@ const Sailing = () => {
             Tourism takes centerstage in delivering an enchanting evening at
             sea. With the traditional rigging of this 4-mast 22-sail luxury
             Danaos Tourism towering overhead, 360-degree sea views, and mood
-            lighting surrounding you, the Royal Albatross creates a truly unique
-            dining ambiance like no other! Rich in history, the Royal Albatross
+            lighting surrounding you, the Nauti Amigo creates a truly unique
+            dining ambiance like no other! Rich in history, the Nauti Amigo
             upholds its authenticity by retaining traditional sailing methods.
             Down below on the main deck, our stunning air-conditioned Grand
             Salon is always available for relaxing and chilling. Along with two
@@ -291,13 +291,13 @@ const Sailing = () => {
 
         <Text
           fontWeight="700"
-          fontSize={{ base: "13px", md: "15px", lg: "20px" }}
+          fontSize={["12px", "17px", "20px", "20px"]}
           my={{ base: "10px", md: "5px" }}
         >
           Terms & Conditions:
         </Text>
         <OrderedList
-          fontSize={{ base: "10px", md: "13px", lg: "15px" }}
+          fontSize={["10px", "15px", "15px", "15px"]}
           fontWeight="500"
           textAlign={"justify"}
         >

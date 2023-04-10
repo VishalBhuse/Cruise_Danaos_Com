@@ -43,7 +43,7 @@ const UserDashboard = () => {
               <Box height={["150px", "200px", "200px", "370px"]}>
                 <Image
                   objectFit={"contain"}
-                  src="https://s3-alpha-sig.figma.com/img/2253/f4e1/9f885c46f28141ecb74f3ad7d23217f6?Expires=1681084800&Signature=iA89QMmQWokHrU7W1jluk3xf-pYQJRfJFVeD5WHh~leEfYcMUOHfrtgcnMOL~HG1RxIX-xLW-g9qdDiryht5RpsRnAto433MAOY2JFszW4V-3rsgvAsydta6uRLir1-KA~43La~IFOfgxCCKa0mQLc4rkwqOBAPkwT0tUPQ2bdo9SdirqNcuEe-nWJV-38klCXFijZlWOcfFOcOJoDtZFLLJSXkv3k5j-5AXztLpUoTBxPbtyfrJk69qCgabMlsQ8Gu4BSXc6FG6ZDp-GPvsPGhGfoe4Lkj9zSXaq2QpoTzDmdMdXe1j8D5sffJ0oXUfpy4CJwWQhCMWCTBBNic7YA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                  src="./img/vishal/profile.png"
                   width={"100%"}
                   height={"100%"}
                 ></Image>

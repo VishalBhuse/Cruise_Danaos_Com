@@ -39,7 +39,7 @@ const TopTravel = () => {
             mx="auto"
             my="1"
           >
-            Virtual Tourist – Singapore Edition – Royal Albatross
+            Virtual Tourist – India Edition – Nauti Amigo
           </Text>
         </Box>
         <Box position={"relative"}>
@@ -66,7 +66,7 @@ const TopTravel = () => {
             mx="auto"
             my="1"
           >
-            Unique Places in Asia only found in Singapore
+            Unique Places in Asia only found in India
           </Text>
         </Box>
         <Box position={"relative"}>
@@ -93,7 +93,7 @@ const TopTravel = () => {
             mx="auto"
             my="1"
           >
-            Majestic Tall Ships that Founded Modern Asia.
+            Danaos Ships that Founded Modern Asia
           </Text>
         </Box>
       </SimpleGrid>

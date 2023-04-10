@@ -49,7 +49,7 @@ const Birthday = () => {
                     {item.desc}
                   </Text>
                 </Box>
-                <Link to="allpackages">
+                <Link to="/allpackages">
                   <Button
                     fontFamily="700"
                     fontSize={"18px"}
@@ -124,7 +124,7 @@ const Birthday = () => {
                       >
                         Starts From Rs.{e.prise}
                       </Text>
-                      <Link to="allpackages">
+                      <Link to="/allpackages">
                         <Button
                           w={{ base: "100%", md: "113px" }}
                           h="40px"

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { worldwide } from "../../UTIL/localstorageauth/PagesData/Data";
+import { Link } from "react-router-dom";
 const TopThings = () => {
   return (
     <Box w="90%" mx="auto" mt="2rem" mb="10px">
@@ -122,6 +123,7 @@ const TopThings = () => {
                   <ListItem>Team Bonding Package.</ListItem>
                 </UnorderedList>
                 <Box w="100%" m="auto" textAlign={"center"}>
+                <Link to="/allpackages">
                   <Button
                     // px={{ base: "6", md: "6" }}
                     size="md"
@@ -137,6 +139,7 @@ const TopThings = () => {
                     view more &nbsp;
                     <HiOutlineArrowRight />
                   </Button>
+                  </Link>
                 </Box>
               </Box>
             </Box>

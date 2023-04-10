@@ -51,7 +51,6 @@ export default function Navbar() {
         >
           <Flex
             flex={{ base: 1, md: "auto" }}
-            ml={{ base: -5 }}
             display={{ base: "flex", md: "none" }}
           >
             <IconButton
