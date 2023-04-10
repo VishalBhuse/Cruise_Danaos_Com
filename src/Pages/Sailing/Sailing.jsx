@@ -69,7 +69,7 @@ const Sailing = () => {
             As the sun melts into the horizon and nightfall takes its place, our
             Danaos Tourism comes to life hosting guests enjoying our
             award-winning Sunset Sail and City Lights Dinner Cruise. Voted the
-            Outstanding Attraction Experience 2022 by the Singapore Tourism
+            Outstanding Attraction Experience 2022 by the Goa Tourism
             Board, these sentiments are echoed internationally by Tripadvisor
             winning the Traveler’s Choice Award for the last 3 consecutive years
             and taking top honours with the Best of the Best accolade in 2022
@@ -85,9 +85,9 @@ const Sailing = () => {
             complement your delectable meal. Experience an unobstructed view of
             Nature transitioning between day and night, through our Sunset Sail
             Cruise that allows passengers to enjoy the best of both settings.
-            Prefer the evening breeze, and witness as Singapore comes to life at
+            Prefer the evening breeze, and witness as Goa comes to life at
             night? The City Lights Cruise will illuminate your senses, as you
-            and your loved ones cruise Singapore’s calm port waters on our
+            and your loved ones cruise Goa’s calm port waters on our
             open-air breezy decks and admire the coastline, with fireworks
             courtesy of the Wings of Time night show at Sentosa.
             <br />

@@ -212,7 +212,7 @@ const Offer = () => {
                     fontWeight="800"
                     fontSize={["10px", "20px", "20px", "25px"]}
                   >
-                    GREAT SINGAPORE SAIL Promo
+                    GREAT GOA SAIL Promo
                   </Text>
                   <Text
                     fontWeight="700"
