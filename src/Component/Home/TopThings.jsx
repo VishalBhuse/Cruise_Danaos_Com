@@ -30,9 +30,10 @@ const TopThings = () => {
       </Text>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
         {worldwide?.map((item) => (
-          <Box height="auto" key={item.id}>
+          <Box height="auto" key={item.id} data-aos="fade-up">
             <Box
               w="100%"
+              boxShadow="rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px"
               bg={`url(${item.img})`}
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
@@ -40,6 +41,12 @@ const TopThings = () => {
               height={{ base: "300px", md: "500px", lg: "500px" }}
               display="grid"
               placeItems={"center"}
+              _hover={{
+                WebkitTransform: "scale(0.9)",
+                transition: "1s ease",
+                transfrom: "scale(0.9)",
+                msTransform: "scale(0.9)",
+              }}
             >
               <Text
                 w={["100%", "100%", "100%"]}
@@ -51,6 +58,7 @@ const TopThings = () => {
                 fontSize="28px"
                 fontWeight="700"
                 color="#081839"
+                data-aos="fade-right"
               >
                 {item.text}
               </Text>
@@ -60,7 +68,7 @@ const TopThings = () => {
       </SimpleGrid>
 
       <Box
-        mt="5"
+        mt="10"
         w="100%"
         bg="url('./img/vishal/bus.png')"
         backgroundPosition="center"

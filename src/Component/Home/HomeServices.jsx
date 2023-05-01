@@ -4,19 +4,46 @@ import {
   Box,
   Text,
   Image,
-  SimpleGrid,
   HStack,
   VStack,
   Heading,
+  IconButton,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Rating } from "../../Rating/Rating";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import Slider from "react-slick";
+import styles from "./HomeBanner.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
+const settings = {
+  dots: true,
+  arrows: false,
+  fade: true,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const HomeServices = () => {
   const [services, setservices] = useState([]);
+  const [slider, setSlider] = React.useState(0);
+
+  // These are the breakpoints which changes the position of the
+  // buttons as the screen size changes
+  const top = useBreakpointValue({ base: "90%", md: "50%" });
+  const side = useBreakpointValue({ base: "30%", md: "40px" });
+
   const getPackageData = async () => {
     await axios
       .get(
-        "https://backenddanaoscruise-production-ed75.up.railway.app/managepackage"
+        "https://backenddanaoscruise-production.up.railway.app/managepackage"
       )
       .then((res) => {
         setservices(res.data);
@@ -31,56 +58,93 @@ const HomeServices = () => {
   }, []);
   return (
     <>
-      <Text
-        my="5"
-        pb="2"
-        color="#081839"
-        fontWeight="700"
-        fontSize="32px"
-        lineHeight="39px"
-        borderBottom={"2px solid #1E1E1E"}
+      <HStack
+        gap={6}
+        alignItems={"center"}
+        flexDirection={["column", "column", "column", "row"]}
       >
-        Services
-      </Text>
-
-      <Box my="10px">
-        <Text
-          fontWeight="400"
-          textAlign={"justify"}
-          fontSize={{ base: "10px", md: "18px", lg: "20px" }}
+        <Box
+          position={"relative"}
+          height={["500px", "500px", "500px", "600px"]}
+          width={["100%", "100%", "100%", "50%"]}
+          // border={"1px solid red"}
+          overflow={"hidden"}
+          pt={"50px"}
         >
-          With a network of partners and client, Danaos Tourism Private Limited
-          is a leader in the Asian Super yacht industry and continues to push
-          the boundaries, offering hoteliers, event managers and convention
-          planners more options for cruises, hosting corporate meetings and
-          entertainment, supporting integrated brand events, and organising
-          private charters as well as alongside events. Our Company’s Mission
-          and Vision is to be India’s most memorable, inspirational and
-          celebration worthy experience. Our mission is to provide a safe,
-          unique and iconic dinner cruise within local India waters while
-          excelling at customer service and providing good value for money.
-        </Text>
-      </Box>
+          {/* CSS files for react-slick */}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charSet="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
+          {/* Left Icon */}
+          <IconButton
+            aria-label="left-arrow"
+            variant="ghost"
+            position="absolute"
+            left={side}
+            top={top}
+            transform={[
+              "translate(-300%, -600%)",
+              "translate(-300%, -600%)",
+              "translate(-300%, -600%)",
+              "translate(0%, -50%)",
+            ]}
+            zIndex={2}
+            onClick={() => slider?.slickPrev()}
+          >
+            <BiLeftArrowAlt size="40px" />
+          </IconButton>
+          {/* Right Icon */}
+          <IconButton
+            aria-label="right-arrow"
+            variant="ghost"
+            position="absolute"
+            right={side}
+            top={top}
+            transform={[
+              "translate(300%, -600%)",
+              "translate(300%, -600%)",
+              "translate(300%, -600%)",
+              "translate(0%, -50%)",
+            ]}
+            zIndex={2}
+            onClick={() => slider?.slickNext()}
+          >
+            <BiRightArrowAlt size="40px" />
+          </IconButton>
+          {/* Slider */}
+          <Slider
+            {...settings}
+            ref={(slider) => setSlider(slider)}
+            border={"1px solid yellow"}
+          >
+            {services?.map((item, ind) => (
+              <Box key={ind} width={"full"} px={["0px", "0px", "0px", "100px"]}>
+                <Link to={`/singlepackage/${item._id}`}>
+                  {/* <VStack alignItems="left" position={"relative"}> */}
+                  <VStack alignItems="left">
+                    <Image
+                      // boxsize={["100px", "100px", "100px", "200px"]}
 
-      <Box my="1rem">
-        <SimpleGrid columns={[1, 2, 3, 4]} spacing={5}>
-          {services?.map((item, ind) => (
-            <Box key={ind}>
-              <Link to={`/singlepackage/${item._id}`}>
-                {/* <VStack alignItems="left" position={"relative"}> */}
-                <VStack alignItems="left">
-                  <Image
-                    // boxsize={["100px", "100px", "100px", "200px"]}
-                    height={{
-                      base: "190px",
-                      sm: "200px",
-                      md: "210px",
-                      lg: "190px",
-                    }}
-                    src={"./img/vishal/pack4.png"}
-                    alt={item.alt}
-                  />
-                  {/* <Text
+                      height={{
+                        base: "300px",
+                        sm: "200px",
+                        md: "300px",
+                        lg: "300px",
+                      }}
+                      src={"./img/vishal/p4.png"}
+                      alt={item.alt}
+                      borderTopLeftRadius="10px"
+                      borderTopRightRadius="10px"
+                    />
+                    {/* <Text
                   w="35%"
                   h="40px"
                   display={"flex"}
@@ -114,111 +178,171 @@ const HomeServices = () => {
                 >
                   {item.text}
                 </Text> */}
-                </VStack>
-                <VStack
-                  height={{ base: "auto", md: "190px", lg: "190px" }}
-                  justifyContent={"space-between"}
-                  alignItems="center"
-                  textTransform={"capitalize"}
-                >
-                  <Text
-                    w="100%"
-                    fontSize="22px"
-                    fontWeight="600"
-                    lineHeight={"28px"}
-                    color="#000000"
-                    textTransform={"capitalize"}
-                  >
-                    {item.packageName}
-                  </Text>
-                  <Text
-                    w="100%"
-                    textAlign="justify"
-                    fontSize="16px"
-                    fontWeight="400"
-                    lineHeight={"19px"}
-                    color="grey"
-                  >
-                    {item.heading1}
-                  </Text>
-                  <HStack mt="10px" justifyContent={"space-between"} w="100%">
-                    <VStack gap="0">
-                      <Heading
-                        fontSize="12px"
-                        fontWeight="800"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        Selling Date
-                      </Heading>
-                      <Text
-                        fontSize="12px"
-                        fontWeight="500"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        {item.sailingDate}
-                      </Text>
-                    </VStack>
-                    <VStack gap="0">
-                      <Heading
-                        fontSize="12px"
-                        fontWeight="800"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        Tables
-                      </Heading>
-                      <Text
-                        fontSize="12px"
-                        fontWeight="500"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        For {item.tables[0]?.personSize} Persons
-                      </Text>
-                    </VStack>
-                    <VStack gap="0">
-                      <Heading
-                        fontSize="12px"
-                        fontWeight="800"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        Availability
-                      </Heading>
-                      <Text
-                        fontSize="12px"
-                        fontWeight="500"
-                        lineHeight={"15px"}
-                        color="#000000"
-                      >
-                        {item.availability}
-                      </Text>
-                    </VStack>
-                  </HStack>
-                  <HStack
-                    w="100%"
+                  </VStack>
+                  <VStack
+                    height={{ base: "auto", md: "190px", lg: "190px" }}
                     justifyContent={"space-between"}
-                    fontSize="14px"
-                    fontWeight="800"
-                    lineHeight={"17px"}
-                    mt="5"
+                    alignItems="center"
+                    textTransform={"capitalize"}
+                    p="2"
+                    border="1px solid teal"
+                    borderBottomLeftRadius={"10px"}
+                    borderBottomRightRadius={"10px"}
                   >
-                    <HStack>
-                      <Rating stars={item.rating} />
+                    <Text
+                      w="100%"
+                      fontSize="22px"
+                      fontWeight="600"
+                      lineHeight={"28px"}
+                      color="#000000"
+                      textTransform={"capitalize"}
+                    >
+                      {item.packageName}
+                    </Text>
+                    <Text
+                      w="100%"
+                      textAlign="justify"
+                      fontSize="16px"
+                      fontWeight="400"
+                      lineHeight={"19px"}
+                      color="grey"
+                    >
+                      {item.heading1}
+                    </Text>
+                    <HStack mt="10px" justifyContent={"space-between"} w="100%">
+                      <VStack gap="0">
+                        <Heading
+                          fontSize="12px"
+                          fontWeight="800"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          Selling Date
+                        </Heading>
+                        <Text
+                          fontSize="12px"
+                          fontWeight="500"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          {item.sailingDate}
+                        </Text>
+                      </VStack>
+                      <VStack gap="0">
+                        <Heading
+                          fontSize="12px"
+                          fontWeight="800"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          Tables
+                        </Heading>
+                        <Text
+                          fontSize="12px"
+                          fontWeight="500"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          For {item.tables[0]?.personSize} Persons
+                        </Text>
+                      </VStack>
+                      <VStack gap="0">
+                        <Heading
+                          fontSize="12px"
+                          fontWeight="800"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          Availability
+                        </Heading>
+                        <Text
+                          fontSize="12px"
+                          fontWeight="500"
+                          lineHeight={"15px"}
+                          color="#000000"
+                        >
+                          {item.availability}
+                        </Text>
+                      </VStack>
                     </HStack>
-                    <HStack>
-                      <Text color={"#000"}>From</Text>
-                      <Text color={"#277E1F"}>Rs.{item.tables[0]?.price}</Text>
+                    <HStack
+                      w="100%"
+                      justifyContent={"space-between"}
+                      fontSize="14px"
+                      fontWeight="800"
+                      lineHeight={"17px"}
+                      mt="5"
+                    >
+                      <HStack>
+                        <Rating stars={item.rating} />
+                      </HStack>
+                      <HStack>
+                        <Text color={"#000"}>From</Text>
+                        <Text color={"#277E1F"}>
+                          Rs.{item.tables[0]?.price}
+                        </Text>
+                      </HStack>
                     </HStack>
-                  </HStack>
-                </VStack>
-              </Link>
-            </Box>
-          ))}
-        </SimpleGrid>
-      </Box>
+                  </VStack>
+                </Link>
+              </Box>
+            ))}
+          </Slider>
+        </Box>
+
+        <Box
+          backgroundImage="url('./img/vishal/content-image.avif')"
+          width={["100%", "100%", "100%", "50%"]}
+          p={5}
+          borderRadius={"10px"}
+        >
+          <Image
+            className={styles.cimage1}
+            src="./img/vishal/circular-image.png"
+            display={["none", "none", "none", "block"]}
+          ></Image>
+          <Text
+            my="5"
+            pb="2"
+            // mt={"-200px"}
+            color="white"
+            fontWeight="700"
+            fontSize="32px"
+            lineHeight="39px"
+            borderBottom={"2px solid white"}
+            // data-aos="fade-up"
+          >
+            Services
+          </Text>
+
+          <Box background={"white"} borderRadius={"10px"} p={"10px"} mt={5}>
+            <Text
+              fontWeight="500"
+              // mt={"-300px"}
+              textAlign={"justify"}
+              fontSize={{ base: "10px", md: "18px", lg: "20px" }}
+              noOfLines={12}
+              color={"black"}
+            >
+              Danaos Tourism Private Limited is a leader in the Asian Super
+              yacht industry, offering unique and memorable experiences to
+              hoteliers, event managers, convention planners, and private
+              clients. Our mission is to provide exceptional, safe, and iconic
+              dinner cruises in Indian waters while delivering excellent
+              customer service and value for money. We also specialize in
+              offering a wide range of services to hoteliers, event managers,
+              convention planners, and private clients. From hosting corporate
+              meetings and entertainment events to organizing private charters
+              and alongside events, we offer a range of options to suit the
+              needs of our clients. Our ultimate goal is to create memorable,
+              inspirational, and celebration-worthy experiences for our
+              customers. We take pride in our commitment to delivering
+              high-quality services that exceed our customers' expectations and
+              leave them with unforgettable memories.
+            </Text>
+          </Box>
+        </Box>
+      </HStack>
     </>
   );
 };

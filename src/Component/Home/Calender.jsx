@@ -26,12 +26,16 @@ const Calender = () => {
           md: "repeat(3, 1fr)",
           lg: "repeat(5, 1fr)",
         }}
-        gap={1}
+        gap={5}
       >
         <GridItem colSpan={{ base: 1, sm: 2, md: 1, lg: 1 }}>
           <Box w="90%" m="auto">
             <VStack>
-              <Box backgroundColor={"#DBDBDB"} textAlign="center">
+              <Box
+                backgroundColor={"#DBDBDB"}
+                textAlign="center"
+                borderRadius={"10px"}
+              >
                 <Text fontWeight="500" fontSize={{ base: "18px", md: "22px" }}>
                   Search Schedule
                 </Text>
@@ -125,6 +129,7 @@ const Calender = () => {
         </GridItem>
         <GridItem colSpan={{ base: 1, sm: 2, md: 2, lg: 4 }}>
           <Box
+            borderRadius={"10px"}
             w="100%"
             bg="url('./img/vishal/ded.png')"
             backgroundPosition="center"
@@ -160,7 +165,8 @@ const Calender = () => {
                   fontSize={{ base: "15px", md: "15px", lg: "22px" }}
                   fontWeight="700"
                 >
-                  Finding the Best Prices & Experiences for you
+                  To helping you find the perfect cruise vacation that fits your
+                  needs and budget.{" "}
                 </Text>
                 <Text
                   fontSize={{ base: "12px", md: "12px", lg: "16px" }}
@@ -171,8 +177,8 @@ const Calender = () => {
                   width={{ base: "100%", md: "fit-content", lg: "80%" }}
                   mx="auto"
                 >
-                  Book your cruise with us, with a partner travel agent or
-                  directly with the cruise line. It’s your Vacation!
+                  Book with us, a partner travel agent, or directly with the
+                  cruise line.
                 </Text>
                 <Text
                   fontSize={{ base: "12px", md: "12px", lg: "16px" }}
@@ -183,9 +189,10 @@ const Calender = () => {
                   width={{ base: "100%", md: "fit-content", lg: "80%" }}
                   mx="auto"
                 >
-                  Best Price Guarantee - we will work with a network of travel
-                  partners after you book with us to make sure you have the best
-                  price for you and your group.
+                  With our Best Price Guarantee, you can rest assured that we
+                  will work with our extensive network of travel partners to
+                  make sure that you get the best possible price for your
+                  cruise.
                 </Text>
                 <Text
                   fontSize={{ base: "12px", md: "12px", lg: "16px" }}
@@ -196,8 +203,9 @@ const Calender = () => {
                   width={{ base: "100%", md: "fit-content", lg: "80%" }}
                   mx="auto"
                 >
-                  Select a Travel Agent in your area who specializes in cruise
-                  vacations.
+                  Find a local agent from our trusted directory for expert
+                  advice. Enjoy a stress-free and unforgettable cruise vacation
+                  with us.
                 </Text>
               </Box>
 
@@ -225,7 +233,7 @@ const Calender = () => {
                 >
                   <Link to="/allpackages">Start Basic Cruise Search</Link>
                 </Button>
-                <Button
+                {/* <Button
                   borderRadius={"10px"}
                   backgroundColor={"#F2CD5B"}
                   color={"#081839"}
@@ -240,7 +248,7 @@ const Calender = () => {
                   my={2}
                 >
                   <Link to="/allpackages">Start Basic Cruise Search</Link>
-                </Button>
+                </Button> */}
               </HStack>
             </Box>
           </Box>

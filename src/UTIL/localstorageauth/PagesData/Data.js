@@ -30,36 +30,42 @@ export const traveldest = [
     id: 1,
     text: "Panjim",
     img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/8e/fc/81/a-walk-through-calangute.jpg?w=500&h=400&s=1",
+    img1: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/01/Beaches-Near-Panjim_14th-jan.jpg",
     alt: "prod1",
   },
   {
     id: 2,
     text: "Vasco",
     img: "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQvm3QYzdDUv6JiYNK2iPJer9rBG4vlUF-10TkOzFrbJrjth6qbEklHhCrYTwjOsGrA",
+    img1: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/0b/5a/3f/lrm-export-20180210-210205.jpg?w=500&h=400&s=1",
     alt: "prod2",
   },
   {
     id: 3,
     text: "Mapusa",
     img: "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcST07B7Rnxnas4Pm7GubLDtlbZlsc_sq6cS7gPYqSzd52CXYfItvwtqZEGl2h1w015t",
+    img1: "https://gumlet.assettype.com/gomantaktimes%2F2023-01%2F570c2c0d-8e3f-4e52-bc6c-84db26c36345%2FKatia_Quintype_custom_size__6_.png?auto=format%2Ccompress&w=1200",
     alt: "prod3",
   },
   {
     id: 4,
     text: "Margao",
     img: "http://t2.gstatic.com/images?q=tbn:ANd9GcRx-XKJoLvIIfHLU_OdUTlcmwa4sRVYu2XTjNnA7gL2UaaSWcBzlX9RWreK8VS2VyIk4Bwu",
+    img1: "https://static.trip101.com/paragraph_media/pictures/000/130/304/large/Margao_city_hall.png?1492178842",
     alt: "prod4",
   },
   {
     id: 5,
     text: "Canacona",
     img: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQ_zm8HA3YH1b4_XCsZAGBAgPoAiXfyD__4KhyG3F3xVhIhHuBon32E_04qgpXlYhWl",
+    img1: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Palolem_beach%2CGoa_-_panoramio.jpg/800px-Palolem_beach%2CGoa_-_panoramio.jpg?20170603073304",
     alt: "prod5",
   },
   {
     id: 6,
     text: "Mormugao",
     img: "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRhTqQ9s4lfTmzgtDtnDpDPrJ8kjHR-5PA3pC9EXdoWFPWqHpfuE0If8mLKLfpDwgVZ",
+    img1: "https://img.traveltriangle.com/blog/wp-content/uploads/2020/01/Beaches-Near-Panjim_14th-jan.jpg",
     alt: "prod6",
   },
 ];
@@ -73,8 +79,8 @@ export const worldwide = [
   },
   {
     id: 2,
-    text: "Panaji",
-    img: "./img/ttpanaji.png",
+    text: "Arambol Beach",
+    img: "./img/panjim.png",
     alt: "prod2",
   },
   {
@@ -88,49 +94,54 @@ export const worldwide = [
 export const travelData = [
   {
     imgurl: "./img/vishal/travel1.png",
-    heading:
-      "If you’ve harboured fantasies of sailing into the sunset in grandeur,",
-    title: "Yacht Overview",
+    heading: "Cruise party with open bar",
+    para: "Get ready for an unforgettable night on the water with our Cruise Party and Open Bar! Dance the night away to our onboard DJ with unlimited drinks from our fully-stocked bar.",
     rating: 4,
     price: "5000",
+    title: "Combo Deal",
+    color: "#C761EE",
   },
   {
     imgurl: "./img/vishal/travel2.png",
-    heading: "Capttain oriel blake talks to all at sea's carol bareuther",
-    title: "Upper Foredeck ",
+    heading: "New year party",
+    para: "Join us for an unforgettable New Year's celebration on our luxury cruise! With entertainment, music, and delicious food, you won't want to miss out.",
     rating: 4.5,
     price: "4000",
+    title: "NY2022",
+    color: "#477ce3",
   },
   {
     imgurl: "./img/vishal/travel3.png",
-    heading: "Scale fresh heights to support Danaos Tourism",
-    title: "Upper Aft Deck ",
+    heading: "Cruise Party Package",
+    para: "Discover the beauty of Mandovi River and make unforgettable memories with loved ones on our Scenic River Cruise at Nauti Amigo. ",
     rating: 4.5,
     price: "4000",
+    title: "Package Deal",
+    color: "#477ce3",
   },
-  {
-    imgurl: "./img/vishal/travel4.png",
-    heading:
-      "For boat lovers by allyson klass the Nauti Amigo has something exciting this festive season",
-    title: "FOR BOAT LOVERS",
-    rating: 4.6,
-    price: "4000",
-  },
-  {
-    imgurl: "./img/vishal/travel5.png",
-    heading: "Royal Albatross opens to public at resorts world sentosa",
-    title: "SET SAIL ON THE Nauti Amigo",
-    rating: 3.5,
-    price: "4000",
-  },
-  {
-    imgurl: "./img/vishal/travel6.png",
-    heading:
-      "mission rasi mission rasi, involves two replica 19th Century Cornish Pilot Boats being rowed over",
-    title: "MISSION RASI",
-    rating: 4,
-    price: "4000",
-  },
+  // {
+  //   imgurl: "./img/vishal/travel4.png",
+  //   heading:
+  //     "For boat lovers by allyson klass the Nauti Amigo has something exciting this festive season",
+  //   title: "FOR BOAT LOVERS",
+  //   rating: 4.6,
+  //   price: "4000",
+  // },
+  // {
+  //   imgurl: "./img/vishal/travel5.png",
+  //   heading: "Royal Albatross opens to public at resorts world sentosa",
+  //   title: "SET SAIL ON THE Nauti Amigo",
+  //   rating: 3.5,
+  //   price: "4000",
+  // },
+  // {
+  //   imgurl: "./img/vishal/travel7.png",
+  //   heading:
+  //     "mission rasi mission rasi, involves two replica 19th Century Cornish Pilot Boats being rowed over",
+  //   title: "MISSION RASI",
+  //   rating: 4,
+  //   price: "4000",
+  // },
 ];
 
 export const sailing = [
@@ -179,28 +190,28 @@ export const birthData = [
 export const ourProd = [
   {
     id: 1,
-    text: "Breakfast Cruise",
-    img: "./img/vishal/prod1.png",
+    text: "Breakfast",
+    img: "./img/vishal/breackfast.png",
     alt: "prod1",
   },
-  { id: 2, text: "City Lights", img: "./img/vishal/prod2.png", alt: "prod2" },
-  { id: 3, text: "Dinner Cruise", img: "./img/vishal/prod3.png", alt: "prod3" },
+  { id: 2, text: "Sunset", img: "./img/vishal/sunset.png", alt: "prod2" },
+  { id: 3, text: "Dinner", img: "./img/vishal/dinning.jpg", alt: "prod3" },
   {
     id: 4,
-    text: "Corporate Cruise",
-    img: "./img/vishal/prod4.png",
+    text: "Corporate Events",
+    img: "./img/vishal/corporate.png",
     alt: "prod4",
   },
   {
     id: 5,
-    text: "Dining Experiences",
-    img: "./img/vishal/prod5.png",
+    text: "Birthday Party",
+    img: "./img/vishal/bday02.png",
     alt: "prod5",
   },
   {
     id: 6,
-    text: "Proposal Cruise",
-    img: "./img/vishal/prod6.png",
+    text: "Proposal",
+    img: "./img/vishal/praposal.png",
     alt: "prod6",
   },
 ];

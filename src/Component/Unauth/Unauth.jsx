@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading } from "@chakra-ui/react";
 import React from "react";
 import { AiFillWarning } from "react-icons/ai";
 import { Link } from "react-router-dom";
