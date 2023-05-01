@@ -24,8 +24,8 @@ const Gallery = () => {
           gap={5}
           mt="5"
         >
-          <Image src="./img/vishal/Gal1.png" alt="pa1" w={"100%"} h="auto" />
-          <Image src="./img/vishal/Gal2.png" alt="pa2" w="100%" h="auto" />
+          <Image src="./img/vishal/gall4.png" alt="pa1" w={"100%"} h="auto" />
+          <Image src="./img/vishal/gall2.png" alt="pa2" w="100%" h="auto" />
         </Grid>
 
         <Grid
@@ -37,22 +37,8 @@ const Gallery = () => {
           gap={5}
           mt="5"
         >
-          <Image src="./img/vishal/Gal3.png" alt="pa31" w="100%" h="auto" />
-          <Image src="./img/vishal/Gal4.png" alt="pa4" w="100%" h="auto" />
-        </Grid>
-
-        <Grid
-          templateColumns={[
-            "repeat(3, 1fr)",
-            "repeat(2, 1fr)",
-            "repeat(3, 1fr)",
-          ]}
-          gap={5}
-          mt="5"
-        >
-          <Image src="./img/vishal/Gal5.png" alt="pa31" w="100%" h="auto" />
-          <Image src="./img/vishal/Gal6.png" alt="pa4" w="100%" h="auto" />
-          <Image src="./img/vishal/Gal7.png" alt="pa4" w="100%" h="auto" />
+          <Image src="./img/vishal/gall3.png" alt="pa31" w="100%" h="auto" />
+          <Image src="./img/vishal/gall1.png" alt="pa4" w="100%" h="auto" />
         </Grid>
       </Box>
 

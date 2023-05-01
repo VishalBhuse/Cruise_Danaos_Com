@@ -7,18 +7,22 @@ import {
   OrderedList,
   ListItem,
   VStack,
+  HStack,
+  Center,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import { sailingsixdata } from "../../UTIL/localstorageauth/PagesData/Data";
+import { BsCalendarCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const Sailing = () => {
   return (
     <>
       <Box
-        mt="20px"
-        w="90%"
+        mt={["-20px", "-20px", "-70px", "-70px"]}
+        w="100%"
         mx="auto"
-        bg="url('./img/vishal/sail.png')"
+        bg="url('./img/vishal/selling.png')"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
@@ -31,7 +35,7 @@ const Sailing = () => {
         <Text
           mt="30px"
           fontSize={{ sm: "15px", md: "25px", lg: "40px", xl: "60px" }}
-          color={"#00000"}
+          color={"#fff"}
           textAlign="center"
           fontWeight={"700"}
         >
@@ -41,7 +45,7 @@ const Sailing = () => {
           <Text
             mt={["30px", "50px", "40px"]}
             fontSize={{ sm: "15px", md: "25px", lg: "40px", xl: "50px" }}
-            color={"#00000"}
+            color={"#fff"}
             fontWeight={"700"}
             textAlign="center"
           >
@@ -51,162 +55,69 @@ const Sailing = () => {
         </Box>
       </Box>
       <Box w="90%" mx="auto" my="5">
-        <Box borderBottom={"2px solid #1E1E1E"} pb="7">
-          <Text
-            fontSize={{ sm: "15px", md: "25px", lg: "32px", xl: "32px" }}
-            lineHeight={{ sm: "25px", md: "40px", lg: "55px", xl: "55px" }}
-            color={"#00000"}
-            fontWeight={"700"}
-            borderBottom={"2px solid #1E1E1E"}
+        <Box w="100%" mx="auto" my="5">
+          <Box
+            pb="7"
+            p={5}
+            mb={7}
+            borderRadius={"10px"}
+            backgroundImage="url('./img/vishal/content-image.avif')"
+            position="relative"
           >
-            Sunset Dinner Cruise with free flow beer and wine
-          </Text>
-          <Text
-            textAlign={"justify"}
-            fontWeight="400"
-            fontSize={{ sm: "5px", md: "5px", lg: "15px", xl: "20px" }}
-          >
-            As the sun melts into the horizon and nightfall takes its place, our
-            Danaos Tourism comes to life hosting guests enjoying our
-            award-winning Sunset Sail and City Lights Dinner Cruise. Voted the
-            Outstanding Attraction Experience 2022 by the Goa Tourism
-            Board, these sentiments are echoed internationally by Tripadvisor
-            winning the Traveler’s Choice Award for the last 3 consecutive years
-            and taking top honours with the Best of the Best accolade in 2022
-            putting Nauti Amigo in the top 1% of attractions worldwide.
-            <br />
-            <br />
-            Our dine and sail packages are perfect for celebrating in style, be
-            it a romantic date, a special birthday or anniversary, or simply an
-            opportunity to spend quality time with family and friends, you are
-            assured of an unforgettable evening with Nauti Amigo and its
-            award-winning crew. Savour the gastronomical delights of our
-            7-course dinner, complemented with a wine tasting session to
-            complement your delectable meal. Experience an unobstructed view of
-            Nature transitioning between day and night, through our Sunset Sail
-            Cruise that allows passengers to enjoy the best of both settings.
-            Prefer the evening breeze, and witness as Goa comes to life at
-            night? The City Lights Cruise will illuminate your senses, as you
-            and your loved ones cruise Goa’s calm port waters on our
-            open-air breezy decks and admire the coastline, with fireworks
-            courtesy of the Wings of Time night show at Sentosa.
-            <br />
-            <br />
-            The magic is not limited to just your surroundings; our Danaos
-            Tourism takes centerstage in delivering an enchanting evening at
-            sea. With the traditional rigging of this 4-mast 22-sail luxury
-            Danaos Tourism towering overhead, 360-degree sea views, and mood
-            lighting surrounding you, the Nauti Amigo creates a truly unique
-            dining ambiance like no other! Rich in history, the Nauti Amigo
-            upholds its authenticity by retaining traditional sailing methods.
-            Down below on the main deck, our stunning air-conditioned Grand
-            Salon is always available for relaxing and chilling. Along with two
-            premium bars, a flying seat over the water and our carefully
-            selected live entertainment, our harbour cruises and dinner cruises
-            have all the ingredients for an unforgettable evening on board our
-            amazing superyacht
-            <br />
-          </Text>
-        </Box>
-        <Box>
-          <Text
-            fontSize={{ sm: "15px", md: "25px", lg: "32px", xl: "32px" }}
-            lineHeight={{ sm: "25px", md: "40px", lg: "55px", xl: "55px" }}
-            color={"#00000"}
-            fontWeight={"700"}
-          >
-            Ticket Selling Fast - Book Now
-          </Text>
-        </Box>
-        <SimpleGrid
-          mt="2"
-          columns={[1, 1, 2, 3]}
-          spacing="40px"
-          borderBottom={"2px solid #1E1E1E"}
-          pb="5"
-        >
-          {sailingsixdata.map((e, ind) => (
-            <Text key={ind} as="span">
-              <Box height="auto">
-                <SimpleGrid columns={[2, 2, 2, 2]} spacing="2">
-                  <Box h="240px">
-                    <Image
-                      borderRadius={"10px"}
-                      src={e.imgurl}
-                      alt="d"
-                      w="100%"
-                      h="100%"
-                    />
-                  </Box>
+            <Image
+              className={"cimage1"}
+              src="./img/vishal/circular-image.png"
+              display={["none", "none", "none", "block"]}
+              mt={"-100px"}
+            ></Image>
 
-                  <Box height={["240px", "240px", "240px"]} px="2">
-                    <VStack
-                      textAlign={"justify"}
-                      h="100%"
-                      alignItems={"flex-start"}
-                      justifyContent={[
-                        "center",
-                        "space-between",
-                        "space-between",
-                      ]}
-                      textTransform="capitalize"
-                    >
-                      <Text
-                        letterSpacing={"2px"}
-                        fontWeight="700"
-                        fontSize={{ base: "18px", md: "18px", lg: "20px" }}
-                        color="#000000"
-                      >
-                        {e.title}
-                      </Text>
-                      <Text
-                        fontWeight="500"
-                        fontSize={{ base: "14px", md: "12px", lg: "15px" }}
-                        color="#000000"
-                        textAlign={"justify"}
-                        noOfLines="3"
-                      >
-                        {e.desc}
-                      </Text>
-                      <Text
-                        fontWeight="500"
-                        fontSize={{ base: "12px", md: "12px", lg: "15px" }}
-                        color="#000000"
-                        textAlign={"justify"}
-                      >
-                        Starts From Rs.{e.prise}
-                      </Text>
-                      <Link to="/allpackages">
-                        <Button
-                          w={{ base: "100%", md: "113px" }}
-                          h="40px"
-                          backgroundColor={"#081839"}
-                          color="white"
-                          _hover={{ backgroundColor: "#081839" }}
-                          fontWeight={"700"}
-                          fontSize={{ base: "14px", md: "16px", lg: "18px" }}
-                          mt="20px"
-                        >
-                          Book Now
-                        </Button>
-                      </Link>
-                    </VStack>
-                  </Box>
-                </SimpleGrid>
-              </Box>
+            <Text
+              fontSize={{ sm: "15px", md: "25px", lg: "32px", xl: "32px" }}
+              lineHeight={{ sm: "25px", md: "40px", lg: "55px", xl: "55px" }}
+              color={"white"}
+              fontWeight={"700"}
+              borderBottom={"2px solid #EE961A"}
+            >
+              More About Nauti Amigo
             </Text>
-          ))}
-        </SimpleGrid>
-
-        <Box>
-          <Text
-            fontSize={{ sm: "15px", md: "25px", lg: "32px", xl: "32px" }}
-            lineHeight={{ sm: "25px", md: "40px", lg: "55px", xl: "55px" }}
-            color={"#00000"}
-            fontWeight={"700"}
-          >
-            Popular Packages
-          </Text>
+            <Box background={"white"} borderRadius={"10px"} p={"10px"} mt={5}>
+              <Text
+                textAlign={"justify"}
+                fontWeight="400"
+                color={"black"}
+                fontSize={{ sm: "5px", md: "5px", lg: "15px", xl: "18px" }}
+              >
+                Welcome to Goa Sunset Cruises, where you can experience the
+                magical beauty of the sun setting over the Arabian Sea. Our
+                sunset cruises offer an unforgettable way to witness the
+                stunning vistas of Goa's coastline, while enjoying a relaxing
+                and luxurious cruise with your loved ones.Our cruises depart
+                from the Mandovi River, located in the heart of Panaji, the
+                capital of Goa. As you step aboard our luxurious vessel, you'll
+                be greeted by our friendly crew who will be at your service
+                throughout the cruise. You can sit back and relax on the
+                comfortable seating areas, or take a stroll on the open deck to
+                take in the breathtaking views.As we set sail, you'll be able to
+                witness the stunning colors of the sky as the sun sets behind
+                the horizon. The orange, pink, and golden hues of the sky create
+                a magical ambiance, perfect for a romantic evening with your
+                partner, or a fun-filled outing with friends and family.Our
+                sunset cruises also offer a delicious dining experience, with a
+                selection of mouth-watering snacks and drinks. You can choose
+                from a range of refreshing cocktails, mocktails, beer, and wine,
+                as you savor the delectable snacks that are served onboard.
+                Whether you're looking for a romantic date, a memorable family
+                outing, or a fun-filled evening with friends, our sunset cruises
+                are the perfect way to spend your time in Goa. Our experienced
+                crew ensures that you have a comfortable and enjoyable time
+                onboard, with safety being our top priority. Don't miss out on
+                the opportunity to experience the beauty of the Mandovi waters.
+                Experience the magic of the Arabian Sea as the sun sets over the
+                horizon. you'll have a memorable and unforgettable experience
+                that you'll cherish for years to come.
+              </Text>
+            </Box>
+          </Box>
         </Box>
 
         <SimpleGrid
@@ -217,117 +128,131 @@ const Sailing = () => {
           pb="5"
         >
           {sailingsixdata.map((e, ind) => (
-            <Text key={ind} as="span">
-              <Box height="auto">
-                <SimpleGrid columns={[2, 2, 2, 2]} spacing="2">
-                  <Box h="240px">
-                    <Image
-                      src={e.imgurl}
-                      alt="d"
-                      w="100%"
-                      h="100%"
-                      borderRadius={"10px"}
-                    />
-                  </Box>
-
-                  <Box height={["240px", "240px", "240px"]} px="2">
-                    <VStack
-                      textAlign={"justify"}
-                      h="100%"
-                      alignItems={"flex-start"}
-                      justifyContent={[
-                        "center",
-                        "space-between",
-                        "space-between",
-                      ]}
-                      textTransform="capitalize"
+            <Box
+              maxW={"450px"}
+              w={"full"}
+              boxShadow={"2xl"}
+              rounded={"md"}
+              p={6}
+              overflow={"hidden"}
+              key={ind}
+              height="auto"
+            >
+              <Stack spacing={"3"}>
+                <Text
+                  textAlign={"center"}
+                  color={"gray.400"}
+                  fontWeight={800}
+                  noOfLines={1}
+                >
+                  {e.cruise} <span style={{ color: "#041d3e" }}>{e.title}</span>
+                </Text>
+                <Text
+                  textTransform={"capitalize"}
+                  fontWeight={700}
+                  fontSize={"16px"}
+                  letterSpacing={1.1}
+                  textAlign={"center"}
+                >
+                  {e.timingInfo}
+                </Text>
+                <HStack justifyContent={"center"}>
+                  <BsCalendarCheck style={{ color: "#ed8b49" }} />
+                  <Text
+                    color={"orange.400"}
+                    fontSize={"16px"}
+                    fontFamily={"body"}
+                    fontWeight={600}
+                    textAlign={"center"}
+                  >
+                    Sails Everyday
+                  </Text>
+                </HStack>
+                <Text
+                  color={"gray.500"}
+                  textAlign={"justify"}
+                  noOfLines={5}
+                  fontWeight={600}
+                >
+                  {e.desc}
+                </Text>
+                <Text color={"gray.500"} fontWeight={600}>
+                  Boarding point-{" "}
+                  <span style={{ color: "#ed8b49" }}>{e.boardingPoint}</span>
+                </Text>
+                <Text color={"gray.500"} fontWeight={600} noOfLines={1}>
+                  Book your spot on our{" "}
+                  <span style={{ color: "#ed8b49" }}>{e.bookDescription}</span>
+                </Text>
+                <Center>
+                  <Link to={"/allpackages"}>
+                    <Button
+                      w={"100px"}
+                      border={"1px solid #81bbed"}
+                      background={"white"}
+                      color={"blue.300"}
+                      fontWeight={600}
                     >
-                      <Text
-                        letterSpacing={"2px"}
-                        fontWeight="700"
-                        fontSize={{ base: "18px", md: "18px", lg: "20px" }}
-                        color="#000000"
-                      >
-                        {e.title}
-                      </Text>
-                      <Text
-                        fontWeight="500"
-                        fontSize={{ base: "14px", md: "12px", lg: "15px" }}
-                        color="#000000"
-                        textAlign={"justify"}
-                        noOfLines="3"
-                      >
-                        {e.desc}
-                      </Text>
-                      <Text
-                        fontWeight="500"
-                        fontSize={{ base: "12px", md: "12px", lg: "15px" }}
-                        color="#000000"
-                        textAlign={"justify"}
-                      >
-                        Starts From Rs.{e.prise}
-                      </Text>
-                      <Link to="/allpackages">
-                        <Button
-                          w={{ base: "100%", md: "113px" }}
-                          h="40px"
-                          backgroundColor={"#081839"}
-                          color="white"
-                          _hover={{ backgroundColor: "#081839" }}
-                          fontWeight={"700"}
-                          fontSize={{ base: "14px", md: "16px", lg: "18px" }}
-                          mt="20px"
-                        >
-                          Book Now
-                        </Button>
-                      </Link>
-                    </VStack>
-                  </Box>
-                </SimpleGrid>
-              </Box>
-            </Text>
+                      Book Now
+                    </Button>
+                  </Link>
+                </Center>
+                <Box h={"210px"} bg={"gray.100"} mb={"20px"}>
+                  <Image h={"full"} w={"100%"} src={e.imgurl} layout={"fill"} />
+                </Box>
+              </Stack>
+            </Box>
           ))}
         </SimpleGrid>
 
-        <Text
-          fontWeight="700"
-          fontSize={["12px", "17px", "20px", "20px"]}
-          my={{ base: "10px", md: "5px" }}
-        >
-          Terms & Conditions:
-        </Text>
-        <OrderedList
-          fontSize={["10px", "15px", "15px", "15px"]}
-          fontWeight="500"
+        <Box
           textAlign={"justify"}
+          mt="10"
+          p={6}
+          borderRadius={10}
+          border={"1px solid #E3E6E6"}
         >
-          <ListItem>
-            Promo code redemption is only with the purchase of a pair of
-            regular-priced City Lights dinner cruise tickets (INR 225++) on
-            Danaos Tourism with promotion code “TAKEMEHOME” only. Promo code has
-            no monetary value and is valid for same-day, one-way, single
-            location drop-off, single-use only and cannot be transferred,
-            exchanged for cash, or offset for any other products or services.
-            Once Limousine booking has been confirmed this coupon will be
-            considered claimed.
-          </ListItem>
-          <ListItem>
-            Additional charges due to re-booking of limousine due to no-show,
-            additional locations & added expenses from the ride will need to be
-            at the customer’s expense and based on limousine service’s standard
-            rates.
-          </ListItem>
-          <ListItem>
-            Under no circumstances will Danaos Tourism be held responsible or
-            liable in any way for any claims, damages, losses, expenses, costs,
-            or liabilities whatsoever.
-          </ListItem>
-          <ListItem>
-            Danaos Tourism reserves the right to change these terms and
-            conditions at any time without prior notice. This promo code cannot
-            be used in conjunction with any other ongoing promotions.
-          </ListItem>
-        </OrderedList>
+          <Text
+            fontWeight="700"
+            fontSize={["12px", "17px", "20px", "20px"]}
+            my={{ base: "10px", md: "5px" }}
+            color={"#5392F7"}
+          >
+            Terms & Conditions:
+          </Text>
+          <OrderedList
+            fontSize={["10px", "15px", "15px", "15px"]}
+            fontWeight="500"
+            textAlign={"justify"}
+          >
+            <ListItem>
+              Promo code redemption is only with the purchase of a pair of
+              regular-priced City Lights dinner cruise tickets (INR 225++) on
+              Danaos Tourism with promotion code “TAKEMEHOME” only. Promo code
+              has no monetary value and is valid for same-day, one-way, single
+              location drop-off, single-use only and cannot be transferred,
+              exchanged for cash, or offset for any other products or services.
+              Once Limousine booking has been confirmed this coupon will be
+              considered claimed.
+            </ListItem>
+            <ListItem>
+              Additional charges due to re-booking of limousine due to no-show,
+              additional locations & added expenses from the ride will need to
+              be at the customer’s expense and based on limousine service’s
+              standard rates.
+            </ListItem>
+            <ListItem>
+              Under no circumstances will Danaos Tourism be held responsible or
+              liable in any way for any claims, damages, losses, expenses,
+              costs, or liabilities whatsoever.
+            </ListItem>
+            <ListItem>
+              Danaos Tourism reserves the right to change these terms and
+              conditions at any time without prior notice. This promo code
+              cannot be used in conjunction with any other ongoing promotions.
+            </ListItem>
+          </OrderedList>
+        </Box>
       </Box>
     </>
   );

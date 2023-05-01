@@ -117,7 +117,7 @@ const Offer = () => {
         </Box>
 
         <SimpleGrid
-          columns={[1, 2, 2, 3]}
+          columns={[1, 1, 2, 3]}
           spacing={6}
           w={"90%"}
           m={"auto"}

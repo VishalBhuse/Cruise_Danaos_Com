@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import { Rating } from "../../Rating/Rating";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import styles from "./HomeServices.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -294,7 +293,7 @@ const HomeServices = () => {
           position="relative"
         >
           <Image
-            className={styles.cimage1}
+            className={'cimage1'}
             src="./img/vishal/circular-image.png"
             display={["none", "block", "block", "block"]}
             mt={"-100px"}
