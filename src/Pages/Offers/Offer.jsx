@@ -5,22 +5,26 @@ import {
   Image,
   ListItem,
   OrderedList,
+  Stack,
   Text,
+  useColorModeValue,
   VStack,
+  Heading,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import React from "react";
 
 const Offer = () => {
   return (
     <>
-      <Box w="90%" mx="auto">
+      <Box w="100%" mx="auto" mt={["-20px", "-20px", "-70px", "-70px"]}>
         <Box
           w="100%"
           bg="url('./img/vishal/offers.png')"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
-          // height={["auto", "300px", "450px", "550px", "600px"]}
+          height={["auto", "300px", "450px", "550px", "600px"]}
         >
           <Box w={{ base: "90%", md: "80%", lg: "80%" }} mx="auto" h="100%">
             <VStack
@@ -40,6 +44,7 @@ const Offer = () => {
                   color={"#081839"}
                   textAlign="center"
                   fontWeight={"700"}
+                  mt="2rem"
                 >
                   Offers & Deals
                 </Text>
@@ -86,6 +91,8 @@ const Offer = () => {
         </Box>
 
         <Box
+          w={"90%"}
+          m={"auto"}
           textAlign={"justify"}
           borderBottom={"2px solid #1E1E1E"}
           my="3"
@@ -93,225 +100,159 @@ const Offer = () => {
         >
           <Text
             fontWeight="800"
-            fontSize={{ base: "15px", md: "25px", lg: "35px" }}
+            fontSize={{ base: "15px", md: "20px", lg: "25px" }}
+            color={"#5392F7"}
           >
             Exclusive Promotions & Discounts Onboard The Nauti Amigo
           </Text>
           <Text
             fontWeight="500"
-            fontSize={{ base: "10px", md: "20px", lg: "25px" }}
+            fontSize={{ base: "10px", md: "17px", lg: "20px" }}
             my={{ base: "10px", md: "20px" }}
           >
-            Find the best deals below and join us on Asia’s only luxury Danaos
-            Tourism where you’re guaranteed open well-ventilated decks and fresh
-            sea breezes!
-          </Text>
-          <Text
-            fontWeight="500"
-            fontSize={{ base: "10px", md: "20px", lg: "25px" }}
-            my={{ base: "10px", md: "20px" }}
-          >
-            Simply ‘copy’ the promo code below during checkout and enjoy the
-            promotions!
+            Enjoy exclusive promotions and discounts onboard The Nauti Amigo -
+            Asia's only luxury Danaos Tourism cruise. Use the promo code at
+            checkout for savings and join us for a luxurious journey at sea!
           </Text>
         </Box>
 
-        <Box mt="10">
-          <Grid
-            templateColumns={{
-              base: "repeat(2, 1fr)",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(5, 1fr)",
-              lg: "repeat(5, 1fr)",
-            }}
-            gap="1rem"
+        <SimpleGrid
+          columns={[1, 2, 2, 3]}
+          spacing={6}
+          w={"90%"}
+          m={"auto"}
+          mt="10"
+          data-aos="fade-up"
+        >
+          <Box
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            borderRadius={"10px"}
           >
-            <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 2 }}>
-              <Box>
-                <Image
-                  src="./img/vishal/offer1.png"
-                  alt="of1"
-                  // w={["80%", "50%", "100%", "80%", "80%"]}
-                  // h="50%"
-                  boxSize={["200px", "250px", "350px", "400px"]}
-                  mx="auto"
-                />
-              </Box>
-            </GridItem>
-            <GridItem colSpan={{ base: 1, sm: 1, md: 3, lg: 3 }}>
-              <VStack
-                h="100%"
-                justifyContent={"center"}
-                alignItems="flex-start"
+            <Image w={"100%"} h={"300px"} src={"./img/vishal/offer1.png"} />
+            <VStack
+              w={"90%"}
+              m={"auto"}
+              mt="6"
+              spacing={3}
+              alignItems="flex-start"
+            >
+              <Text
+                color={"green.500"}
+                textTransform={"uppercase"}
+                fontWeight={800}
+                fontSize={"sm"}
+                letterSpacing={1.1}
               >
-                <Box textAlign={"justify"}>
-                  <Text
-                    fontWeight="800"
-                    fontSize={["10px", "19px", "20px", "25px"]}
-                  >
-                    RAISE YOUR GLASSES
-                  </Text>
-                  <Text
-                    fontWeight="700"
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                    my={{ base: "10px", md: "20px" }}
-                  >
-                    Promo Code not needed.
-                    <br />
-                    Valid till: 1 Feb – 31 March 2023
-                  </Text>
-                  <Text
-                    fontWeight="700"
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                    my={{ base: "10px", md: "20px" }}
-                  >
-                    Complimentary drink from our standard bar.
-                  </Text>
-                  <Text
-                    fontWeight="700"
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                    my={{ base: "10px", md: "20px" }}
-                  >
-                    Not applicable on special sailings.
-                  </Text>
-                </Box>
-              </VStack>
-            </GridItem>
-          </Grid>
-
-          <Grid
-            mt="5"
-            templateColumns={{
-              base: "repeat(2, 1fr)",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(5, 1fr)",
-              lg: "repeat(5, 1fr)",
-            }}
-            gap="1rem"
+                RAISE YOUR GLASSES
+              </Text>
+              <Heading
+                color={useColorModeValue("gray.700", "white")}
+                fontSize={"xl"}
+                fontFamily={"body"}
+              >
+                Promo Code not needed.
+                <br />
+                Valid till: 1 Feb – 31 March...
+              </Heading>
+              <Text color={"gray.500"}>
+                Complimentary drink from our standard bar. Not applicable on
+                special sailings.
+              </Text>
+            </VStack>
+          </Box>
+          <Box
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            borderRadius={"10px"}
           >
-            <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 2 }}>
-              <Box>
-                <Image
-                  src="./img/vishal/offer2.png"
-                  alt="of1"
-                  // w={["80%", "50%", "100%", "80%", "80%"]}
-                  // h="50%"
-                  boxSize={["200px", "250px", "350px", "400px"]}
-                  mx="auto"
-                />
-              </Box>
-            </GridItem>
-            <GridItem colSpan={{ base: 1, sm: 1, md: 3, lg: 3 }}>
-              <VStack
-                h="100%"
-                justifyContent={"center"}
-                alignItems="flex-start"
+            <Image w={"100%"} h={"300px"} src={"./img/vishal/offer2.png"} />
+            <VStack
+              w={"90%"}
+              m={"auto"}
+              mt="6"
+              spacing={3}
+              alignItems="flex-start"
+            >
+              <Text
+                color={"green.500"}
+                textTransform={"uppercase"}
+                fontWeight={800}
+                fontSize={"sm"}
+                letterSpacing={1.1}
               >
-                <Box textAlign={"justify"}>
-                  <Text
-                    fontWeight="800"
-                    fontSize={["10px", "20px", "20px", "25px"]}
-                  >
-                    GREAT GOA SAIL Promo
-                  </Text>
-                  <Text
-                    fontWeight="700"
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                    my={{ base: "6px", md: "15px" }}
-                  >
-                    Promo Code: TAKEMEHOME
-                    <br />
-                    Valid till: June 2023 Free Single-way
-                  </Text>
-                  <Text
-                    fontWeight="600"
-                    fontSize={{ base: "9px", md: "13px", lg: "20px" }}
-                  >
-                    Free Single-way Limo Ride home worth Rs.7000.
-                  </Text>
-                  <Text
-                    fontWeight="600"
-                    fontSize={{ base: "9px", md: "13px", lg: "20px" }}
-                  >
-                    Every purchase of 2x Adult City Lights Dinner Cruise!
-                  </Text>
-                </Box>
-              </VStack>
-            </GridItem>
-          </Grid>
-
-          <Grid
-            mt="5"
-            templateColumns={{
-              base: "repeat(2, 1fr)",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(5, 1fr)",
-              lg: "repeat(5, 1fr)",
-            }}
-            gap="1rem"
+                GREAT GOA SAIL Promo
+              </Text>
+              <Heading
+                color={useColorModeValue("gray.700", "white")}
+                fontSize={"xl"}
+                fontFamily={"body"}
+              >
+                Promo Code: TAKEMEHOME
+                <br />
+                Valid till: June 2023...
+              </Heading>
+              <Text color={"gray.500"}>
+                Free Single-way Limo Ride home worth Rs.7000. Every purchase of
+                2x Adult City Lights Dinner.
+              </Text>
+            </VStack>
+          </Box>
+          <Box
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            borderRadius={"10px"}
           >
-            <GridItem colSpan={{ base: 1, sm: 1, md: 2, lg: 2 }}>
-              <Box>
-                <Image
-                  src="./img/vishal/offer3.png"
-                  alt="of1"
-                  // w={["80%", "50%", "100%", "80%", "80%"]}
-                  // h="50%"
-                  boxSize={["200px", "250px", "350px", "400px"]}
-                  mx="auto"
-                />
-              </Box>
-            </GridItem>
-            <GridItem colSpan={{ base: 1, sm: 1, md: 3, lg: 3 }}>
-              <VStack
-                h="100%"
-                justifyContent={"center"}
-                alignItems="flex-start"
+            <Image w={"100%"} h={"300px"} src={"./img/vishal/offer3.png"} />
+            <VStack
+              w={"90%"}
+              m={"auto"}
+              my="6"
+              spacing={3}
+              alignItems="flex-start"
+            >
+              <Text
+                color={"green.500"}
+                textTransform={"uppercase"}
+                fontWeight={800}
+                fontSize={"sm"}
+                letterSpacing={1.1}
               >
-                <Box textAlign={"justify"}>
-                  <Text
-                    fontWeight="800"
-                    fontSize={["10px", "20px", "20px", "25px"]}
-                  >
-                    COMPLIMENTARY PROSECCO
-                  </Text>
-                  <Text
-                    fontWeight="700"
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                    my={{ base: "6px", md: "15px" }}
-                  >
-                    Promo Code: FREEWINE
-                    <br />
-                    Valid till: June 2023
-                  </Text>
-                  <Text
-                    fontWeight="600"
-                    fontSize={{ base: "9px", md: "13px", lg: "20px" }}
-                  >
-                    A complimentary bottle of Prosecco with every purchase.
-                  </Text>
-                  <Text
-                    fontWeight="600"
-                    fontSize={{ base: "9px", md: "13px", lg: "20px" }}
-                  >
-                    And 2x Adult City Lights Dinner Cruise!
-                  </Text>
-                </Box>
-              </VStack>
-            </GridItem>
-          </Grid>
-        </Box>
+                COMPLIMENTARY PROSECCO
+              </Text>
+              <Heading
+                color={useColorModeValue("gray.700", "white")}
+                fontSize={"xl"}
+                fontFamily={"body"}
+              >
+                Promo Code: FREEWINE
+                <br />
+                Valid till: June 2023
+              </Heading>
+              <Text color={"gray.500"}>
+                A complimentary bottle of Prosecco with every purchase. And 2x
+                Adult City Lights Dinner.
+              </Text>
+            </VStack>
+          </Box>
+        </SimpleGrid>
 
-        <Box textAlign={"justify"} mt="10">
+        <Box
+          w={"90%"}
+          m={"auto"}
+          textAlign={"justify"}
+          mt="10"
+          p={6}
+          borderRadius={10}
+          border={"1px solid #E3E6E6"}
+        >
           <Text
             fontWeight="700"
             fontSize={["12px", "17px", "20px", "20px"]}
             my={{ base: "5px", md: "5px" }}
+            color={"#5392F7"}
           >
             Terms & Conditions:
           </Text>
           <OrderedList
-            fontSize={["10px", "15px", "15px", "15px"]}
+            fontSize={["10px", "15px", "15px", "18px"]}
             fontWeight="500"
           >
             <ListItem>

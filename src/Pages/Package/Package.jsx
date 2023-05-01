@@ -7,8 +7,8 @@ const Package = () => {
   return (
     <>
       <Box
-        mt="20px"
-        w="90%"
+        mt={["-20px", "-20px", "-70px", "-70px"]}
+        w="100%"
         mx="auto"
         bg="url('./img/vishal/pack.png')"
         backgroundPosition="center"
@@ -19,26 +19,25 @@ const Package = () => {
         alignItems="center"
         justifyContent="flex-start"
         flexDirection={"column"}
+        position="relative"
       >
-        <Text
-          mt="30px"
-          fontSize={{ sm: "15px", md: "25px", lg: "35px", xl: "35px" }}
-          lineHeight={{ sm: "25px", md: "40px", lg: "55px", xl: "55px" }}
-          color={"#F2CD5B"}
-          textAlign="center"
-          fontWeight={"700"}
+        <Box
+        w="100%"
+          position={"absolute"}
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
         >
-          “I wanted freedom, open air and adventure. I found it on the sea.”
-        </Text>
-        <Text
-          textAlign="center"
-          fontSize={{ sm: "15px", md: "25px", lg: "35px", xl: "60px" }}
-          lineHeight={{ sm: "25px", md: "40px", lg: "50px", xl: "100px" }}
-          color={"#FFFFFF"}
-          fontWeight={"700"}
-        >
-          Promotions and Packages
-        </Text>
+          <Text
+            mt={["0rem","0rem","-6rem","-6rem"]}
+            fontSize={{ sm: "15px", md: "25px", lg: "50px", xl: "50px" }}
+            color={"#F2CD5B"}
+            textAlign="center"
+            fontWeight={"700"}
+          >
+            “ Set Sail On Your Dream Vacation.”
+          </Text>
+        </Box>
       </Box>
       <Box
         w="90%"

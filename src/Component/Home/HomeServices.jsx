@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "../../Rating/Rating";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import styles from "./HomeBanner.module.css";
+import styles from "./HomeServices.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -35,8 +35,6 @@ const HomeServices = () => {
   const [services, setservices] = useState([]);
   const [slider, setSlider] = React.useState(0);
 
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
 
@@ -67,11 +65,9 @@ const HomeServices = () => {
           position={"relative"}
           height={["500px", "500px", "500px", "600px"]}
           width={["100%", "100%", "100%", "50%"]}
-          // border={"1px solid red"}
           overflow={"hidden"}
           pt={"50px"}
         >
-          {/* CSS files for react-slick */}
           <link
             rel="stylesheet"
             type="text/css"
@@ -295,16 +291,17 @@ const HomeServices = () => {
           width={["100%", "100%", "100%", "50%"]}
           p={5}
           borderRadius={"10px"}
+          position="relative"
         >
           <Image
             className={styles.cimage1}
             src="./img/vishal/circular-image.png"
-            display={["none", "none", "none", "block"]}
+            display={["none", "block", "block", "block"]}
+            mt={"-100px"}
           ></Image>
           <Text
             my="5"
             pb="2"
-            // mt={"-200px"}
             color="white"
             fontWeight="700"
             fontSize="32px"
