@@ -17,8 +17,7 @@ const Calender = () => {
   const [value, onChange] = useState(new Date());
 
   return (
-    // <Box w="90%" mx="auto" mt={["50px", "150px", "250px", "400px"]}>
-      <Box w="90%" mx="auto" mt="4rem">
+    <Box w="90%" mx="auto" mt="2rem">
       <Grid
         mt="5"
         templateColumns={{

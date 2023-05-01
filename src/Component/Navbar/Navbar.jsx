@@ -42,13 +42,7 @@ export default function Navbar() {
       <Header />
 
       <Box>
-        <Flex
-          w="90%"
-          mx="auto"
-          bg={useColorModeValue("white", "gray.800")}
-          color={useColorModeValue("gray.600", "white")}
-          align={"center"}
-        >
+        <Flex w="90%" mx="auto" align={"center"} zIndex={9}>
           <Flex
             flex={{ base: 1, md: "auto" }}
             display={{ base: "flex", md: "none" }}
@@ -95,6 +89,7 @@ export default function Navbar() {
               mx="auto"
               h="25px"
               mt="-1.5rem"
+              zIndex={9}
             >
               <DesktopNav />
             </Flex>

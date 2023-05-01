@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const HomeBanner = () => {
   return (
     <>
-      <Box w="100%" mx="auto">
+      <Box w="100%" mx="auto" mt={["-20px", "-20px", "-70px", "-70px"]}>
         <Box
           w="100%"
           height={{ base: "200px", md: "400px", lg: "600px" }}
@@ -20,7 +20,7 @@ const HomeBanner = () => {
             loop
             style={{
               minWidth: "100%",
-              zIndex: 1,
+              zIndex: -1,
               position: "absolute",
               top: "30%",
               left: "50%",
