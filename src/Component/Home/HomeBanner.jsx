@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const HomeBanner = () => {
   return (
     <>
-      <Box w="90%" mx="auto">
+      <Box w="100%" mx="auto">
         <Box
           w="100%"
           bg="url('./img/vishal/homeban.png')"

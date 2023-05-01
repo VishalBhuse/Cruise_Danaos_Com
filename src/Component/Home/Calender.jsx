@@ -17,7 +17,8 @@ const Calender = () => {
   const [value, onChange] = useState(new Date());
 
   return (
-    <Box w="90%" mx="auto">
+    // <Box w="90%" mx="auto" mt={["50px", "150px", "250px", "400px"]}>
+      <Box w="90%" mx="auto" mt="4rem">
       <Grid
         mt="5"
         templateColumns={{
@@ -42,14 +43,16 @@ const Calender = () => {
                 <Box
                   backgroundColor="#000000"
                   h="2px"
-                  w={{ base: "60%", md: "80%" }}
+                  w={{ base: "80%", md: "80%" }}
                   my="1"
+                  m="auto"
                 ></Box>
                 <Text
-                  fontWeight="300"
+                  fontWeight="400"
                   fontSize={{ base: "18px", md: "22px" }}
-                  textAlign={"left"}
                   ml={{ base: "1", md: "2" }}
+                  textAlign={"center"}
+                  color="teal.500"
                 >
                   Select Sailing Date{" "}
                 </Text>
