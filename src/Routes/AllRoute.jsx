@@ -83,7 +83,7 @@ const routes = [
   {
     path: "/admindetails",
     element: (
-      <RequireAuth adminOnly>
+      <RequireAuth child>
         <AdminDetails />
       </RequireAuth>
     ),
@@ -91,7 +91,7 @@ const routes = [
   {
     path: "/adminpackage",
     element: (
-      <RequireAuth adminOnly>
+      <RequireAuth child>
         <AdminPackage />
       </RequireAuth>
     ),
@@ -99,7 +99,7 @@ const routes = [
   {
     path: "/adminbill",
     element: (
-      <RequireAuth adminOnly>
+      <RequireAuth child>
         <AdminBill />
       </RequireAuth>
     ),
@@ -107,7 +107,7 @@ const routes = [
   {
     path: "/admininvoice",
     element: (
-      <RequireAuth adminOnly>
+      <RequireAuth child>
         <AdminInvoice />
       </RequireAuth>
     ),

@@ -15,8 +15,10 @@ const TopTravel = () => {
         Top Travel Articles
       </Text>
       <SimpleGrid columns={[1, 1, 2, 3]} spacing={10} mt="5rem">
-        <Box position={"relative"}>
-          <Image src="./img/vishal/art1.png" alt="3" w="100%" />
+        <Box position={"relative"} _hover={{WebkitTransform:"scale(1.1)",transition: "1s ease",transfrom:"scale(1.5)" , msTransform:"scale(1.5)", borderRadius:"20px"}}>
+          <Image src="./img/vishal/Mandovi3.png" alt="3" h="300px" w="100%" _hover={{
+              borderRadius:"10px",
+            }} />
           <Box
             position={"absolute"}
             top="-2rem"
@@ -39,11 +41,13 @@ const TopTravel = () => {
             mx="auto"
             my="1"
           >
-            Virtual Tourist – India Edition – Nauti Amigo
+            Virtual Tourist – Goa Edition – Nauti Amigo
           </Text>
         </Box>
-        <Box position={"relative"}>
-          <Image src="./img/vishal/art2.png" alt="3" w="100%" />
+        <Box position={"relative"} _hover={{WebkitTransform:"scale(1.1)",transition: "1s ease",transfrom:"scale(1.5)" , msTransform:"scale(1.5)", borderRadius:"20px"}}>
+          <Image src="./img/vishal/Mandovi1.png" alt="3" w="100%" h="300px"  _hover={{
+              borderRadius:"10px",
+            }} />
           <Box
             position={"absolute"}
             top="-2rem"
@@ -66,10 +70,10 @@ const TopTravel = () => {
             mx="auto"
             my="1"
           >
-            Unique Places in Asia only found in India
+            Mandovi River Cruise in Goa
           </Text>
         </Box>
-        <Box position={"relative"}>
+        <Box position={"relative"} _hover={{WebkitTransform:"scale(1.1)",transition: "1s ease",transfrom:"scale(1.5)" , msTransform:"scale(1.5)", borderRadius:"20px"}}>
           <Box
             position={"absolute"}
             top="-2rem"
@@ -84,7 +88,9 @@ const TopTravel = () => {
           >
             7th Mar
           </Box>
-          <Image src="./img/vishal/art3.png" alt="3" w="100%" />
+          <Image src="./img/vishal/Mandovi2.png" alt="3" w="100%" h="300px"  _hover={{
+              borderRadius:"10px",
+            }} />
           <Text
             textAlign={"center"}
             fontWeight="500"
@@ -92,8 +98,9 @@ const TopTravel = () => {
             fontSize={{ sm: "18px", md: "16px", lg: "18px", xl: "20px" }}
             mx="auto"
             my="1"
+            textTransform={"capitalize"}
           >
-            Danaos Ships that Founded Modern Asia
+            Origin of Mandovi River and the Dams Aftermath
           </Text>
         </Box>
       </SimpleGrid>

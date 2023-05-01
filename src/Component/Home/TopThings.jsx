@@ -10,6 +10,10 @@ import {
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { worldwide } from "../../UTIL/localstorageauth/PagesData/Data";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const TopThings = () => {
   return (
     <Box w="90%" mx="auto" mt="2rem" mb="10px">
@@ -22,7 +26,7 @@ const TopThings = () => {
         borderBottom={"2px solid #1E1E1E"}
         mb="5"
       >
-        Top things to do World Wide
+        Top Beaches In Goa
       </Text>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
         {worldwide?.map((item) => (
@@ -68,6 +72,7 @@ const TopThings = () => {
         p="5"
       >
         <Box
+          data-aos="fade-up"
           w="90%"
           mx="auto"
           bgColor={" rgba(217, 217, 217, 0.5)"}
@@ -109,7 +114,11 @@ const TopThings = () => {
                 p="5"
                 my="4"
               >
-                <Text textAlign={'center'} fontWeight="700" fontSize={["12px", "15px", "22px"]}>
+                <Text
+                  textAlign={"center"}
+                  fontWeight="700"
+                  fontSize={["12px", "15px", "22px"]}
+                >
                   Corporate Package <br /> From 30PX
                 </Text>
                 <Text borderBottom={"2px solid #1E1E1E"} mt="5"></Text>
@@ -123,22 +132,22 @@ const TopThings = () => {
                   <ListItem>Team Bonding Package.</ListItem>
                 </UnorderedList>
                 <Box w="100%" m="auto" textAlign={"center"}>
-                <Link to="/allpackages">
-                  <Button
-                    // px={{ base: "6", md: "6" }}
-                    size="md"
-                    fontWeight="700"
-                    fontSize={{ base: "13px", md: "16px" }}
-                    _hover={{
-                      background:
-                        "linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)",
-                    }}
-                    background="linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)"
-                    textTransform={"capitalize"}
-                  >
-                    view more &nbsp;
-                    <HiOutlineArrowRight />
-                  </Button>
+                  <Link to="/allpackages">
+                    <Button
+                      // px={{ base: "6", md: "6" }}
+                      size="md"
+                      fontWeight="700"
+                      fontSize={{ base: "13px", md: "16px" }}
+                      _hover={{
+                        background:
+                          "linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)",
+                      }}
+                      background="linear-gradient(90deg, #F9D33B 0%, #F8ECC1 100%)"
+                      textTransform={"capitalize"}
+                    >
+                      view more &nbsp;
+                      <HiOutlineArrowRight />
+                    </Button>
                   </Link>
                 </Box>
               </Box>
