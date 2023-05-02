@@ -6,7 +6,6 @@ import {
   Button,
   OrderedList,
   ListItem,
-  VStack,
   HStack,
   Center,
   Stack,
@@ -193,9 +192,8 @@ const Sailing = () => {
                       color={"blue.300"}
                       fontWeight={600}
                       _hover={{
-                        background:"blue.300",
-                        color:"#fff"
-                          
+                        background: "blue.300",
+                        color: "#fff",
                       }}
                     >
                       Book Now

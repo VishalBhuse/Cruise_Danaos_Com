@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import {
-  Box,
-  Text,
-  Image,
-  HStack,
-  VStack,
-  Heading,
-  IconButton,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Text, Image, HStack, VStack, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Rating } from "../../Rating/Rating";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GetAPICALL } from "../../Config/Functions/getFun";
 AOS.init();
 
 const settings = {
@@ -32,26 +22,14 @@ const settings = {
 
 const HomeServices = () => {
   const [services, setservices] = useState([]);
-  const [slider, setSlider] = React.useState(0);
 
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
-  const side = useBreakpointValue({ base: "30%", md: "40px" });
-
-  const getPackageData = async () => {
-    await axios
-      .get(
-        "https://backenddanaoscruise-production.up.railway.app/managepackage"
-      )
-      .then((res) => {
-        setservices(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const getPackages = async () => {
+    let res = await GetAPICALL("managepackage");
+    setservices(res);
   };
 
   useEffect(() => {
-    getPackageData();
+    getPackages();
   }, []);
   return (
     <>
@@ -68,32 +46,12 @@ const HomeServices = () => {
           overflow={"hidden"}
           pt={"50px"}
         >
-          <link
-            rel="stylesheet"
-            type="text/css"
-            charSet="UTF-8"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-          />
-
-          {/* Slider */}
-          <Slider
-            {...settings}
-            ref={(slider) => setSlider(slider)}
-            border={"1px solid yellow"}
-          >
+          <Slider {...settings}>
             {services?.map((item, ind) => (
               <Box key={ind} width={"full"} px={["0px", "0px", "0px", "100px"]}>
                 <Link to={`/singlepackage/${item._id}`}>
-                  {/* <VStack alignItems="left" position={"relative"}> */}
                   <VStack alignItems="left">
                     <Image
-                      // boxsize={["100px", "100px", "100px", "200px"]}
-
                       height={{
                         base: "300px",
                         sm: "200px",

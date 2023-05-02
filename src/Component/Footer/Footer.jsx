@@ -71,7 +71,7 @@ const Footer = () => {
                   ml="6"
                   fontSize={"14px"}
                   fontWeight="600"
-                  textTransform={'capitalize'}
+                  textTransform={"capitalize"}
                 >
                   <ListItem
                     mt="2"
@@ -136,7 +136,7 @@ const Footer = () => {
                 ml="6"
                 fontSize={"14px"}
                 fontWeight="600"
-                textTransform={'capitalize'}
+                textTransform={"capitalize"}
               >
                 <ListItem
                   mt="2"
@@ -272,6 +272,7 @@ const Footer = () => {
                   <a
                     href="https://www.facebook.com/danaoscruise"
                     target={"_blank"}
+                    rel="noreferrer"
                   >
                     <Image
                       _hover={{
@@ -307,6 +308,7 @@ const Footer = () => {
                   <a
                     href="https://www.instagram.com/danaoscruise"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <Image
                       _hover={{
