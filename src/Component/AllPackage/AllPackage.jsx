@@ -7,34 +7,23 @@ import {
   Heading,
   Image,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Stack,
   Divider,
-  ButtonGroup,
   Button,
 } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GetAPICALL } from "../../Config/Functions/getFun";
 import { Rating } from "../../Rating/Rating";
 
 const AllPackage = () => {
   const [packages, setPackages] = useState([]);
 
   const getPackages = async () => {
-    await axios
-      .get(
-        "https://backenddanaoscruise-production-ed75.up.railway.app/managepackage"
-      )
-      .then((res) => {
-        // console.log(res.data)
-        setPackages(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    let res = await GetAPICALL("managepackage");
+    setPackages(res);
   };
 
   useEffect(() => {
@@ -45,15 +34,23 @@ const AllPackage = () => {
     <Box w="95%" mx="auto">
       <SimpleGrid columns={[1, 1, 2, 3]} spacing="5">
         {packages?.map((item) => (
-          <Card maxW="md" key={item._id} textTransform={"capitalize"}>
+          <Card
+            key={item._id}
+            textTransform={"capitalize"}
+            boxShadow=" rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
+          >
             <CardBody>
               <Image
-                src="./img/vishal/pack4.png"
-                alt="vishal/pack4.png"
+                src="./img/vishal/p4.png"
+                alt="vishal/p4.png"
                 borderRadius="lg"
                 w="100%"
+                _hover={{
+                  WebkitTransform: "scale(0.9)",
+                  transition: "1s ease",
+                }}
               />
-              <Stack mt="6" spacing="3">
+              <VStack mt="6" spacing="3">
                 <Heading size="md">{item.packageName}</Heading>
                 <Text>{item.heading1}</Text>
                 <HStack w="100%" justifyContent={"space-between"}>
@@ -119,7 +116,6 @@ const AllPackage = () => {
                   fontSize={["9px", "9px", "9px", "14px"]}
                   fontWeight="700"
                   lineHeight={"5px"}
-                  // mt="5"
                   p={"10px"}
                 >
                   <HStack>
@@ -140,14 +136,18 @@ const AllPackage = () => {
                     </Text>
                   </HStack>
                 </HStack>
-              </Stack>
+              </VStack>
             </CardBody>
             <Divider />
             <CardFooter display={"flex"} justifyContent="center">
               <Link to={`/singlepackage/${item._id}`}>
-                <Button variant="solid" colorScheme="blue">
+                <Button
+                  variant="solid"
+                  colorScheme="blue"
+                  _hover={{ bgGradient: "linear(to-l, #7928CA, #FF0080)" }}
+                >
                   Book Now
-                </Button>{" "}
+                </Button>
               </Link>
             </CardFooter>
           </Card>

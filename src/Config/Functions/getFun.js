@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { MainBackedAPI } from "../API";
 
-const BASE_URL = "https://backenddanaoscruise-production-ed75.up.railway.app";
+const BASE_URL = "https://backenddanaoscruise-production.up.railway.app";
 
 export const GetAPICALL = async (endpoint) => {
   const url = BASE_URL + `/${endpoint}`;
