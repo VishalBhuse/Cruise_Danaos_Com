@@ -25,7 +25,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -59,6 +59,7 @@ const HomeServices = () => {
         gap={6}
         alignItems={"center"}
         flexDirection={["column", "column", "column", "row"]}
+        mt="2rem"
       >
         <Box
           position={"relative"}
@@ -78,42 +79,7 @@ const HomeServices = () => {
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
-          {/* Left Icon */}
-          <IconButton
-            aria-label="left-arrow"
-            variant="ghost"
-            position="absolute"
-            left={side}
-            top={top}
-            transform={[
-              "translate(-300%, -600%)",
-              "translate(-300%, -600%)",
-              "translate(-300%, -600%)",
-              "translate(0%, -50%)",
-            ]}
-            zIndex={2}
-            onClick={() => slider?.slickPrev()}
-          >
-            <BiLeftArrowAlt size="40px" />
-          </IconButton>
-          {/* Right Icon */}
-          <IconButton
-            aria-label="right-arrow"
-            variant="ghost"
-            position="absolute"
-            right={side}
-            top={top}
-            transform={[
-              "translate(300%, -600%)",
-              "translate(300%, -600%)",
-              "translate(300%, -600%)",
-              "translate(0%, -50%)",
-            ]}
-            zIndex={2}
-            onClick={() => slider?.slickNext()}
-          >
-            <BiRightArrowAlt size="40px" />
-          </IconButton>
+
           {/* Slider */}
           <Slider
             {...settings}
@@ -293,7 +259,7 @@ const HomeServices = () => {
           position="relative"
         >
           <Image
-            className={'cimage1'}
+            className={"cimage1"}
             src="./img/vishal/circular-image.png"
             display={["none", "block", "block", "block"]}
             mt={"-100px"}

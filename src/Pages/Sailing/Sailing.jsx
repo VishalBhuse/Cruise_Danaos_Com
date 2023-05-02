@@ -192,6 +192,11 @@ const Sailing = () => {
                       background={"white"}
                       color={"blue.300"}
                       fontWeight={600}
+                      _hover={{
+                        background:"blue.300",
+                        color:"#fff"
+                          
+                      }}
                     >
                       Book Now
                     </Button>

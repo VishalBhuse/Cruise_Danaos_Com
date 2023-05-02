@@ -27,7 +27,7 @@ const Footer = () => {
       mt="2"
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={"5rem"}>
+        <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing={"2rem"}>
           <Stack spacing={3}>
             <Box>
               <Link to="/">
@@ -66,15 +66,56 @@ const Footer = () => {
               </Text>
               <Box borderBottom="3px solid #081839" w="76px" h="2px"></Box>
               <Box mt="150px">
-                <UnorderedList textAlign={"left"} ml="6" fontSize={"14px"}>
-                  <ListItem mt="2">Travel</ListItem>
-                  <ListItem mt="2">Booking</ListItem>
-                  <ListItem mt="2">HoListItemdays</ListItem>
-                  <ListItem mt="2">Fooding</ListItem>
-                  <ListItem mt="2">Home</ListItem>
-                  <ListItem mt="2">Explore the Cruise</ListItem>
-                  <ListItem mt="2">News</ListItem>
-                  <ListItem mt="2">Blogs</ListItem>
+                <UnorderedList
+                  textAlign={"left"}
+                  ml="6"
+                  fontSize={"14px"}
+                  fontWeight="600"
+                  textTransform={'capitalize'}
+                >
+                  <ListItem
+                    mt="2"
+                    _hover={{
+                      transform: "translate(0.7rem)",
+                      color: "blue",
+                    }}
+                    transition="0.7s ease-out"
+                  >
+                    <Link to="/">Home</Link>
+                  </ListItem>
+                  <ListItem
+                    mt="2"
+                    _hover={{
+                      transform: "translate(0.7rem)",
+                      color: "blue",
+                    }}
+                    transition="0.7s ease-out"
+                  >
+                    <Link to="/package">packages</Link>
+                  </ListItem>
+                  <ListItem
+                    mt="2"
+                    _hover={{
+                      transform: "translate(0.7rem)",
+                      color: "blue",
+                    }}
+                    transition="0.7s ease-out"
+                  >
+                    <Link to="/allpackages">Booking</Link>
+                  </ListItem>
+                  <ListItem
+                    mt="2"
+                    _hover={{
+                      transform: "translate(0.7rem)",
+                      color: "blue",
+                    }}
+                    transition="0.7s ease-out"
+                  >
+                    <Link to="/gallery">Gallary</Link>
+                  </ListItem>
+                  <ListItem mt="2">
+                    <Link to="/offer">Offers</Link>
+                  </ListItem>
                 </UnorderedList>
               </Box>
             </VStack>
@@ -90,15 +131,63 @@ const Footer = () => {
             </Text>
             <Box borderBottom="3px solid #081839" w="76px" h="2px"></Box>
             <Box mt="150px">
-              <UnorderedList textAlign={"left"} ml="6" fontSize={"14px"}>
-                <ListItem mt="2">Breakfast Cruises</ListItem>
-                <ListItem mt="2">Lunch Cruises</ListItem>
-                <ListItem mt="2">Dinner Cruises</ListItem>
-                <ListItem mt="2">Dog Cruises</ListItem>
-                <ListItem mt="2">Charter Cruises</ListItem>
-                <ListItem mt="2">Shop All</ListItem>
-                <ListItem mt="2">Gift Vouchers</ListItem>
-                <ListItem mt="2">Special Sailings</ListItem>
+              <UnorderedList
+                textAlign={"left"}
+                ml="6"
+                fontSize={"14px"}
+                fontWeight="600"
+                textTransform={'capitalize'}
+              >
+                <ListItem
+                  mt="2"
+                  _hover={{
+                    transform: "translate(0.7rem)",
+                    color: "blue",
+                  }}
+                  transition="0.7s ease-out"
+                >
+                  <Link to="/allpackages">Breakfast Cruises</Link>
+                </ListItem>
+                <ListItem
+                  mt="2"
+                  _hover={{
+                    transform: "translate(0.7rem)",
+                    color: "blue",
+                  }}
+                  transition="0.7s ease-out"
+                >
+                  <Link to="/allpackages">Lunch Cruises</Link>
+                </ListItem>
+                <ListItem
+                  mt="2"
+                  _hover={{
+                    transform: "translate(0.7rem)",
+                    color: "blue",
+                  }}
+                  transition="0.7s ease-out"
+                >
+                  <Link to="/allpackages">Dinner Cruises</Link>
+                </ListItem>
+                <ListItem
+                  mt="2"
+                  _hover={{
+                    transform: "translate(0.7rem)",
+                    color: "blue",
+                  }}
+                  transition="0.7s ease-out"
+                >
+                  <Link to="/allpackages">Charter Cruises</Link>
+                </ListItem>
+                <ListItem
+                  mt="2"
+                  _hover={{
+                    transform: "translate(0.7rem)",
+                    color: "blue",
+                  }}
+                  transition="0.7s ease-out"
+                >
+                  <Link to="/sailing">Special Sailings</Link>
+                </ListItem>
               </UnorderedList>
             </Box>
           </Stack>
@@ -175,19 +264,61 @@ const Footer = () => {
             </Text>
             <Box>
               <HStack gap="20px" mt="5px">
-                <a
-                  href="https://www.facebook.com/danaoscruise"
-                  target={"_blank"}
+                <Text
+                  border="1px solid white"
+                  padding="10px"
+                  borderRadius="50%"
                 >
-                  <Image src="./img/vishal/BFB.png" w="19px" alt="fbimg" />
-                </a>
-                <Image src="./img/vishal/Btwit.png" w="19px" alt="twitimg" />
-                <a
-                  href="https://www.instagram.com/danaoscruise"
-                  target="_blank"
+                  <a
+                    href="https://www.facebook.com/danaoscruise"
+                    target={"_blank"}
+                  >
+                    <Image
+                      _hover={{
+                        transform: "rotate(360deg)",
+                      }}
+                      transition="0.7s ease-out"
+                      src="./img/vishal/BFB.png"
+                      w="19px"
+                      alt="fbimg"
+                    />
+                  </a>
+                </Text>
+                <Text
+                  border="1px solid white"
+                  padding="10px"
+                  borderRadius="50%"
                 >
-                  <Image src="./img/vishal/Binsta.png" w="19px" alt="insta" />
-                </a>
+                  <Image
+                    _hover={{
+                      transform: "rotate(360deg)",
+                    }}
+                    transition="0.7s ease-out"
+                    src="./img/vishal/Btwit.png"
+                    w="19px"
+                    alt="twitimg"
+                  />
+                </Text>
+                <Text
+                  border="1px solid white"
+                  padding="10px"
+                  borderRadius="50%"
+                >
+                  <a
+                    href="https://www.instagram.com/danaoscruise"
+                    target="_blank"
+                  >
+                    <Image
+                      _hover={{
+                        transform: "rotate(360deg)",
+                      }}
+                      transition="0.7s ease-out"
+                      src="./img/vishal/Binsta.png"
+                      w="19px"
+                      alt="insta"
+                    />
+                  </a>
+                </Text>
               </HStack>
             </Box>
           </Stack>

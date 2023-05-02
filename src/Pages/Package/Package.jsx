@@ -1,4 +1,15 @@
-import { Box, Button, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  SimpleGrid,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { packagePageData } from "../../UTIL/localstorageauth/PagesData/Data";
@@ -22,14 +33,14 @@ const Package = () => {
         position="relative"
       >
         <Box
-        w="100%"
+          w="100%"
           position={"absolute"}
           top="50%"
           left="50%"
           transform="translate(-50%, -50%)"
         >
           <Text
-            mt={["0rem","0rem","-6rem","-6rem"]}
+            mt={["0rem", "0rem", "-6rem", "-6rem"]}
             fontSize={{ sm: "15px", md: "25px", lg: "50px", xl: "50px" }}
             color={"#F2CD5B"}
             textAlign="center"
@@ -46,51 +57,60 @@ const Package = () => {
         borderBottom={"2px solid #000000"}
         pb="25px"
       >
-        {packagePageData?.map((item) => (
-          <SimpleGrid
-            columns={{ sm: 1, md: 2, lg: 2 }}
-            spacing={10}
-            mt="12"
-            key={item.id}
-          >
-            <Box>
-              <Image src={item.img} alt={item.alt} boxSize={"500px"}></Image>
-            </Box>
-            <Box textAlign={"center"}>
-              <VStack spacing={["20px", "20px"]} mt="4">
-                <Text fontWeight="700" fontSize={"42px"}>
-                  {item.text}
-                </Text>
-                <Text fontWeight="500" fontSize={"36px"}>
-                  {item.start}
-                </Text>
+        <SimpleGrid columns={[1, 1, 1, 2]} spacing={10} mt="12">
+          {packagePageData?.map((item) => (
+            <Box
+              key={item.id}
+              borderWidth="1px"
+              m={"auto"}
+              borderRadius="lg"
+              padding={4}
+              data-aos="flip-up"
+            >
+              <SimpleGrid columns={2} spacing={4}>
                 <Box>
-                  <Text
-                    fontWeight="400"
-                    fontSize={"24px"}
-                    textAlign="justify"
+                  <Image
+                    objectFit="cover"
+                    src={item.img}
+                    alt={item.alt}
+                    h="250px"
                     w="100%"
-                  >
-                    {item.desc}
-                  </Text>
+                  />
                 </Box>
-                <Link to="/allpackages">
-                  <Button
-                    fontFamily="700"
-                    fontSize={"18px"}
-                    textTransform={"capitalize"}
-                    backgroundColor={"#081839"}
-                    color="#fff"
-                    _hover={{ backgroundColor: "#081839" }}
-                    px="50px"
-                  >
-                    Book package
-                  </Button>
-                </Link>
-              </VStack>
+                <Box>
+                  <VStack h="100%" spacing={5}>
+                    <Heading fontSize={"2xl"} fontFamily={"body"} noOfLines={1}>
+                      {item.text}
+                    </Heading>
+                    <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
+                      {item.start}
+                    </Text>
+                    <Text textAlign={"center"} px={3} noOfLines={3}>
+                      {item.desc}
+                    </Text>
+                    <Link to="/allpackages">
+                      <Button
+                        fontFamily="700"
+                        fontSize={"18px"}
+                        textTransform={"capitalize"}
+                        backgroundColor={"#081839"}
+                        color={"white"}
+                        boxShadow={
+                          "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                        }
+                        _hover={{
+                          backgroundColor: "#081839",
+                        }}
+                      >
+                        Book package
+                      </Button>
+                    </Link>
+                  </VStack>
+                </Box>
+              </SimpleGrid>
             </Box>
-          </SimpleGrid>
-        ))}
+          ))}
+        </SimpleGrid>
       </Box>
       <Box w="90%" mx={"auto"} textAlign="center" mb="50px">
         <Text fontFamily="bold" fontSize={"22px"}>

@@ -16,7 +16,7 @@ const Gallery = () => {
 
   const settings = {
     margin: 10,
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
