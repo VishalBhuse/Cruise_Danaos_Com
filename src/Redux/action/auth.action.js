@@ -1,4 +1,4 @@
-import axios from "axios";
+import { PostAPICALL } from "../../Config/Functions/getFun";
 import {
   LOGIN_FAILURE,
   LOGIN_REQUEST,
@@ -7,14 +7,10 @@ import {
 
 export const authlogin = (params) => (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
-  return axios
-    .post(
-      `https://backenddanaoscruise-production-ed75.up.railway.app/user/login`,
-      params
-    )
+  return PostAPICALL(`user/login`, params)
     .then((r) => {
-      localStorage.setItem("auth", JSON.stringify(r.data));
-      dispatch({ type: LOGIN_SUCCESS, payload: r.data.token });
+      localStorage.setItem("auth", JSON.stringify(r));
+      dispatch({ type: LOGIN_SUCCESS, payload: r.token });
       return LOGIN_SUCCESS;
     })
     .catch((err) => {
