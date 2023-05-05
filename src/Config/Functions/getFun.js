@@ -1,7 +1,7 @@
 import axios from "axios";
-// import { MainBackedAPI } from "../API";
+import { MainBackedAPI } from "../API";
 
-const BASE_URL = "https://thoughtful-lime-walrus.cyclic.app";
+const BASE_URL = MainBackedAPI;
 
 export const GetAPICALL = async (endpoint) => {
   const url = BASE_URL + `/${endpoint}`;
