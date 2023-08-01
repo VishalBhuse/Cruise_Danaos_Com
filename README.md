@@ -8,9 +8,12 @@
 - Chakara UI
 - Vercel (for Deployment)
 
-## Functionality :
+## Features :
 - User Create Account
 - Book Cruise Dinner
+- Admin Dashboard
+- User Dashboard
+- Admin Manage Booking
 
 
 ## Homepage :-
