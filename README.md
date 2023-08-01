@@ -14,9 +14,8 @@
 
 
 ## Homepage :-
-
-
-![image](https://github.com/VishalBhuse/Cruise_Danaos_Com/assets/101569259/b4382f78-818e-4235-bc8f-f8f19194f91c)
+![image](https://github.com/VishalBhuse/Cruise_Danaos_Com/assets/101569259/3f74651b-e6db-4a81-8677-58431e492dc4)
+![image](https://github.com/VishalBhuse/Cruise_Danaos_Com/assets/101569259/3a72752d-bc4a-47a1-b388-637c25cee57a)
 
 
 # Getting Started with Create React App
