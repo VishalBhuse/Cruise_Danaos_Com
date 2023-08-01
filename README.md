@@ -13,7 +13,7 @@
 - Book Cruise Dinner
 - Admin Dashboard
 - User Dashboard
-- Admin Manage Booking
+- Admin Manage Booking and Package
 
 
 ## Homepage :-
